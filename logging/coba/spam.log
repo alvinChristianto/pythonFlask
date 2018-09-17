@@ -1,0 +1,84 @@
+2018-09-04 19:52:33,801 - spam_application - INFO - creating an instance of auxiliary_module.Auxiliary
+2018-09-04 19:52:33,801 - spam_application.auxiliary.Auxiliary - INFO - creating an instance of Auxiliary
+2018-09-04 19:52:33,801 - spam_application - INFO - created an instance of auxiliary_module.Auxiliary
+2018-09-04 19:52:33,802 - spam_application - INFO - calling auxiliary_module.Auxiliary.do_something
+2018-09-04 19:53:20,178 - spam_application - INFO - creating an instance of auxiliary_module.Auxiliary
+2018-09-04 19:53:20,178 - spam_application.auxiliary.Auxiliary - INFO - creating an instance of Auxiliary
+2018-09-04 19:53:20,178 - spam_application - INFO - created an instance of auxiliary_module.Auxiliary
+2018-09-04 19:53:20,178 - spam_application - INFO - calling auxiliary_module.Auxiliary.do_something
+2018-09-04 19:53:20,178 - spam_application.auxiliary.Auxiliary - INFO - doing something
+2018-09-04 19:53:20,178 - spam_application.auxiliary.Auxiliary - INFO - done doing something
+2018-09-04 19:53:20,178 - spam_application - INFO - finished auxiliary_module.Auxiliary.do_something
+2018-09-04 19:53:20,178 - spam_application - INFO - calling auxiliary_module.some_function()
+2018-09-04 19:53:20,178 - spam_application.auxiliary - INFO - received a call to "some_function"
+2018-09-04 19:53:20,178 - spam_application - INFO - done with auxiliary_module.some_function()
+2018-09-04 19:53:48,881 - spam_application - INFO - creating an instance of auxiliary_module.Auxiliary
+2018-09-04 19:53:48,881 - spam_application.auxiliary.Auxiliary - INFO - creating an instance of Auxiliary
+2018-09-04 19:53:48,881 - spam_application - INFO - created an instance of auxiliary_module.Auxiliary
+2018-09-04 19:53:48,882 - spam_application - INFO - calling auxiliary_module.Auxiliary.do_something
+2018-09-04 19:53:48,882 - spam_application.auxiliary.Auxiliary - INFO - doing something
+2018-09-04 19:53:48,882 - spam_application.auxiliary.Auxiliary - INFO - done doing something
+2018-09-04 19:53:48,882 - spam_application - INFO - finished auxiliary_module.Auxiliary.do_something
+2018-09-04 19:53:48,882 - spam_application - INFO - calling auxiliary_module.some_function()
+2018-09-04 19:53:48,882 - spam_application.auxiliary - INFO - received a call to "some_function"
+2018-09-04 19:53:48,883 - spam_application - INFO - done with auxiliary_module.some_function()
+2018-09-04 19:53:57,137 - spam_application - INFO - creating an instance of auxiliary_module.Auxiliary
+2018-09-04 19:53:57,138 - spam_application.auxiliary.Auxiliary - INFO - creating an instance of Auxiliary
+2018-09-04 19:53:57,138 - spam_application - INFO - created an instance of auxiliary_module.Auxiliary
+2018-09-04 19:53:57,138 - spam_application - INFO - calling auxiliary_module.Auxiliary.do_something
+2018-09-04 19:53:57,138 - spam_application.auxiliary.Auxiliary - INFO - doing something
+2018-09-04 19:53:57,138 - spam_application.auxiliary.Auxiliary - INFO - done doing something
+2018-09-04 19:53:57,138 - spam_application - INFO - finished auxiliary_module.Auxiliary.do_something
+2018-09-04 19:53:57,139 - spam_application - INFO - calling auxiliary_module.some_function()
+2018-09-04 19:53:57,139 - spam_application.auxiliary - INFO - received a call to "some_function"
+2018-09-04 19:53:57,139 - spam_application - INFO - done with auxiliary_module.some_function()
+2018-09-04 19:54:52,546 - spam_application - INFO - creating an instance of aux.Auxiliary
+2018-09-04 19:54:52,547 - spam_application.auxiliary.Auxiliary - INFO - creating an instance of Auxiliary
+2018-09-04 19:54:52,547 - spam_application - INFO - created an instance of aux.Auxiliary
+2018-09-04 19:54:52,547 - spam_application - INFO - calling auxiliary_mod.do_something
+2018-09-04 19:54:52,547 - spam_application.auxiliary.Auxiliary - INFO - doing something
+2018-09-04 19:54:52,547 - spam_application.auxiliary.Auxiliary - INFO - done doing something
+2018-09-04 19:54:52,548 - spam_application - INFO - finished auxiliary_mod.do_something
+2018-09-04 19:54:52,548 - spam_application - INFO - calling a.some_function()
+2018-09-04 19:54:52,548 - spam_application.auxiliary - INFO - received a call to "some_function"
+2018-09-04 19:54:52,548 - spam_application - INFO - done with auxle.some_function()
+2018-09-04 19:55:03,355 - spam_application - INFO - creating an instance of aux.Auxiliary
+2018-09-04 19:55:03,355 - spam_application.auxiliary.Auxiliary - INFO - creating an instance of Auxiliary
+2018-09-04 19:55:03,355 - spam_application - INFO - created an instance of aux.Auxiliary
+2018-09-04 19:55:03,355 - spam_application - INFO - calling auxiliary_mod.do_something
+2018-09-04 19:55:03,356 - spam_application.auxiliary.Auxiliary - INFO - doing something
+2018-09-04 19:55:03,356 - spam_application.auxiliary.Auxiliary - INFO - done doing something
+2018-09-04 19:55:03,356 - spam_application - INFO - finished auxiliary_mod.do_something
+2018-09-04 19:55:03,356 - spam_application - INFO - calling a.some_function()
+2018-09-04 19:55:03,356 - spam_application.auxiliary - INFO - received a call to "some_function"
+2018-09-04 19:55:03,357 - spam_application - INFO - done with auxle.some_function()
+2018-09-04 19:55:38,898 - app_1 - INFO - creating an instance of aux.Auxiliary
+2018-09-04 19:55:38,898 - app_1 - INFO - created an instance of aux.Auxiliary
+2018-09-04 19:55:38,898 - app_1 - INFO - calling auxiliary_mod.do_something
+2018-09-04 19:55:38,898 - app_1 - INFO - finished auxiliary_mod.do_something
+2018-09-04 19:55:38,898 - app_1 - INFO - calling a.some_function()
+2018-09-04 19:55:38,899 - app_1 - INFO - done with auxle.some_function()
+2018-09-04 19:55:48,392 - app_1 - INFO - creating an instance of aux.Auxiliary
+2018-09-04 19:55:48,395 - app_1 - INFO - created an instance of aux.Auxiliary
+2018-09-04 19:55:48,395 - app_1 - INFO - calling auxiliary_mod.do_something
+2018-09-04 19:55:48,397 - app_1 - INFO - finished auxiliary_mod.do_something
+2018-09-04 19:55:48,397 - app_1 - INFO - calling a.some_function()
+2018-09-04 19:55:48,397 - app_1 - INFO - done with auxle.some_function()
+2018-09-04 19:57:58,278 - app_1 - INFO - creating an instance of aux.Auxiliary
+2018-09-04 19:57:58,279 - app_1 - INFO - created an instance of aux.Auxiliary
+2018-09-04 19:57:58,279 - app_1 - INFO - calling auxiliary_mod.do_something
+2018-09-04 19:57:58,279 - app_1 - INFO - finished auxiliary_mod.do_something
+2018-09-04 19:57:58,279 - app_1 - INFO - calling a.some_function()
+2018-09-04 19:57:58,280 - app_1 - INFO - done with auxle.some_function()
+2018-09-04 19:58:00,168 - app_1 - INFO - creating an instance of aux.Auxiliary
+2018-09-04 19:58:00,169 - app_1 - INFO - created an instance of aux.Auxiliary
+2018-09-04 19:58:00,169 - app_1 - INFO - calling auxiliary_mod.do_something
+2018-09-04 19:58:00,169 - app_1 - INFO - finished auxiliary_mod.do_something
+2018-09-04 19:58:00,169 - app_1 - INFO - calling a.some_function()
+2018-09-04 19:58:00,170 - app_1 - INFO - done with auxle.some_function()
+2018-09-04 19:58:08,960 - app_1 - INFO - creating an instance of aux.Auxiliary
+2018-09-04 19:58:08,960 - app_1 - INFO - created an instance of aux.Auxiliary
+2018-09-04 19:58:08,960 - app_1 - INFO - calling auxiliary_mod.do_something
+2018-09-04 19:58:08,960 - app_1 - INFO - finished auxiliary_mod.do_something
+2018-09-04 19:58:08,961 - app_1 - INFO - calling a.some_function()
+2018-09-04 19:58:08,961 - app_1 - INFO - done with auxle.some_function()

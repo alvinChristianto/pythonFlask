@@ -1,0 +1,717 @@
+<!DOCTYPE html>
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8"><meta name="viewport" content="width=device-width"><title>https://www.pythonforbeginners.com/beautifulsoup/beautifulsoup-4-python</title><link rel="stylesheet" type="text/css" href="python_files/viewsource.css"></head><body id="viewsource" class="highlight" style="-moz-tab-size: 4" contextmenu="actions"><pre id="line1"><span></span><span class="doctype">&lt;!DOCTYPE html&gt;</span><span>
+<span id="line2"></span></span><span>&lt;<span class="start-tag">html</span> <span class="attribute-name">lang</span>="<a class="attribute-value">en-US</a>" <span class="attribute-name">prefix</span>="<a class="attribute-value">og: http://ogp.me/ns#</a>"&gt;</span><span>
+<span id="line3"></span>    </span><span>&lt;<span class="start-tag">head</span>&gt;</span><span>
+<span id="line4"></span>        </span><span>&lt;<span class="start-tag">meta</span> <span class="attribute-name">charset</span>="<a class="attribute-value">UTF-8</a>" <span>/</span>&gt;</span><span>
+<span id="line5"></span>        </span><span>&lt;<span class="start-tag">meta</span> <span class="attribute-name">name</span>="<a class="attribute-value">viewport</a>" <span class="attribute-name">content</span>="<a class="attribute-value">width=device-width</a>" <span>/</span>&gt;</span><span>
+<span id="line6"></span>        </span><span>&lt;<span class="start-tag">title</span>&gt;</span><span>Beautiful Soup 4 Python</span><span>&lt;/<span class="end-tag">title</span>&gt;</span><span>
+<span id="line7"></span>        </span><span>&lt;<span class="start-tag">link</span> <span class="attribute-name">rel</span>="<a class="attribute-value">profile</a>" <span class="attribute-name">href</span>="<a class="attribute-value" href="view-source:http://gmpg.org/xfn/11">http://gmpg.org/xfn/11</a>" <span>/</span>&gt;</span><span>
+<span id="line8"></span>        </span><span>&lt;<span class="start-tag">link</span> <span class="attribute-name">rel</span>="<a class="attribute-value">canonical</a>" <span class="attribute-name">href</span>="<a class="attribute-value" href="view-source:https://www.pythonforbeginners.com/beautifulsoup/beautifulsoup-4-python">https://www.pythonforbeginners.com/beautifulsoup/beautifulsoup-4-python</a>" <span>/</span>&gt;</span><span>
+<span id="line9"></span>        </span><span>&lt;<span class="start-tag">meta</span> <span class="attribute-name">property</span>="<a class="attribute-value">og:locale</a>" <span class="attribute-name">content</span>="<a class="attribute-value">en_US</a>"<span>/</span>&gt;</span><span>
+<span id="line10"></span>        </span><span>&lt;<span class="start-tag">meta</span> <span class="attribute-name">property</span>="<a class="attribute-value">og:type</a>" <span class="attribute-name">content</span>="<a class="attribute-value">website</a>"<span>/</span>&gt;</span><span>
+<span id="line11"></span>        </span><span>&lt;<span class="start-tag">meta</span> <span class="attribute-name">property</span>="<a class="attribute-value">og:title</a>" <span class="attribute-name">content</span>="<a class="attribute-value">Beautiful Soup 4 Python</a>"<span>/</span>&gt;</span><span>
+<span id="line12"></span>        </span><span>&lt;<span class="start-tag">meta</span> <span class="attribute-name">property</span>="<a class="attribute-value">og:url</a>" <span class="attribute-name">content</span>="<a class="attribute-value">https://www.pythonforbeginners.com/beautifulsoup/beautifulsoup-4-python</a>"<span>/</span>&gt;</span><span>
+<span id="line13"></span>        </span><span>&lt;<span class="start-tag">meta</span> <span class="attribute-name">property</span>="<a class="attribute-value">og:site_name</a>" <span class="attribute-name">content</span>="<a class="attribute-value">Python For Beginners</a>"<span>/</span>&gt;</span><span>        
+<span id="line14"></span>        </span><span>&lt;<span class="start-tag">link</span> <span class="attribute-name">rel</span>="<a class="attribute-value">alternate</a>" <span class="attribute-name">type</span>="<a class="attribute-value">application/rss+xml</a>" <span class="attribute-name">title</span>="<a class="attribute-value">Python For Beginners <span class="entity"><span>&amp;</span>raquo;</span> Feed</a>" <span class="attribute-name">href</span>="<a class="attribute-value" href="view-source:https://www.pythonforbeginners.com/feed/">https://www.pythonforbeginners.com/feed/</a>" <span>/</span>&gt;</span><span>
+<span id="line15"></span>        </span><span>&lt;<span class="start-tag">meta</span> <span class="attribute-name">name</span>="<a class="attribute-value">description</a>" <span class="attribute-name">lang</span>="<a class="attribute-value">en-US</a>" <span class="attribute-name">content</span>="<a class="attribute-value"> Overview This article is an introduction to BeautifulSoup 4 in Python. If you want to know more I recommend you ... </a>" <span>/</span>&gt;</span><span>
+<span id="line16"></span>        </span><span>&lt;<span class="start-tag">meta</span> <span class="attribute-name">name</span>="<a class="attribute-value">keywords</a>" <span class="attribute-name">content</span>="<a class="attribute-value">learn python, python 101, what is python, what is django, python tutorial</a>" <span>/</span>&gt;</span><span>
+<span id="line17"></span>        </span><span>&lt;<span class="start-tag">meta</span> <span class="attribute-name">http-equiv</span>="<a class="attribute-value">Content-Type</a>" <span class="attribute-name">content</span>="<a class="attribute-value">text/html; charset=utf-8</a>" <span>/</span>&gt;</span><span>
+<span id="line18"></span>        </span><span>&lt;<span class="start-tag">meta</span> <span class="attribute-name">name</span>="<a class="attribute-value">viewport</a>" <span class="attribute-name">content</span>="<a class="attribute-value">width=device-width, initial-scale=1.0</a>"&gt;</span><span>
+<span id="line19"></span>        </span><span>&lt;<span class="start-tag">link</span> <span class="attribute-name">rel</span>="<a class="attribute-value">shortcut icon</a>" <span class="attribute-name">href</span>="<a class="attribute-value" href="view-source:https://www.pythonforbeginners.com/static/img/favicon.ico">/static/img/favicon.ico</a>" <span class="attribute-name">type</span>="<a class="attribute-value">image/x-icon</a>" <span>/</span>&gt;</span><span>
+<span id="line20"></span>        </span><span>&lt;<span class="start-tag">link</span> <span class="attribute-name">href</span>='<a class="attribute-value" href="view-source:https://fonts.googleapis.com/css?family=Lato">https://fonts.googleapis.com/css?family=Lato</a>' <span class="attribute-name">rel</span>='<a class="attribute-value">stylesheet</a>' <span class="attribute-name">type</span>='<a class="attribute-value">text/css</a>'&gt;</span><span>
+<span id="line21"></span>        </span><span>&lt;<span class="start-tag">link</span> <span class="attribute-name">rel</span>="<a class="attribute-value">stylesheet</a>" <span class="attribute-name">href</span>="<a class="attribute-value" href="view-source:https://www.pythonforbeginners.com/static/css/bootstrap.min.css">/static/css/bootstrap.min.css</a>"&gt;</span><span>
+<span id="line22"></span>        </span><span>&lt;<span class="start-tag">link</span> <span class="attribute-name">rel</span>="<a class="attribute-value">stylesheet</a>" <span class="attribute-name">href</span>="<a class="attribute-value" href="view-source:https://www.pythonforbeginners.com/static/css/bootstrap-theme-min.css">/static/css/bootstrap-theme-min.css</a>"&gt;</span><span>
+<span id="line23"></span>        </span><span>&lt;<span class="start-tag">link</span> <span class="attribute-name">rel</span>="<a class="attribute-value">stylesheet</a>" <span class="attribute-name">href</span>="<a class="attribute-value" href="view-source:https://cdnjs.cloudflare.com/ajax/libs/SyntaxHighlighter/3.0.83/styles/shCore.min.css">//cdnjs.cloudflare.com/ajax/libs/SyntaxHighlighter/3.0.83/styles/shCore.min.css</a>"&gt;</span><span>
+<span id="line24"></span>        </span><span>&lt;<span class="start-tag">link</span> <span class="attribute-name">rel</span>="<a class="attribute-value">stylesheet</a>" <span class="attribute-name">href</span>="<a class="attribute-value" href="view-source:https://cdnjs.cloudflare.com/ajax/libs/SyntaxHighlighter/3.0.83/styles/shThemeDefault.min.css">//cdnjs.cloudflare.com/ajax/libs/SyntaxHighlighter/3.0.83/styles/shThemeDefault.min.css</a>"&gt;</span><span>
+<span id="line25"></span>        </span><span>&lt;<span class="start-tag">link</span> <span class="attribute-name">rel</span>="<a class="attribute-value">stylesheet</a>" <span class="attribute-name">type</span>="<a class="attribute-value">text/css</a>" <span class="attribute-name">media</span>="<a class="attribute-value">screen</a>" <span class="attribute-name">href</span>="<a class="attribute-value" href="view-source:https://www.pythonforbeginners.com/static/css/p4b.css">/static/css/p4b.css</a>" &gt;</span><span>
+<span id="line26"></span>        </span><span>&lt;<span class="start-tag">link</span> <span class="attribute-name">href</span>="<a class="attribute-value" href="view-source:https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css">//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css</a>" <span class="attribute-name">rel</span>="<a class="attribute-value">stylesheet</a>"&gt;</span><span>
+<span id="line27"></span>        
+<span id="line28"></span></span><span>&lt;<span class="start-tag">script</span>&gt;</span><span>
+<span id="line29"></span>  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+<span id="line30"></span>  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+<span id="line31"></span>  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+<span id="line32"></span>  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+<span id="line33"></span>
+<span id="line34"></span>  ga('create', 'UA-64708426-1', 'auto');
+<span id="line35"></span>  ga('send', 'pageview');
+<span id="line36"></span>
+<span id="line37"></span></span><span>&lt;/<span class="end-tag">script</span>&gt;</span><span>
+<span id="line38"></span></span><span>&lt;<span class="start-tag">script</span> <span class="attribute-name">src</span>="<a class="attribute-value" href="view-source:https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js">https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js</a>"&gt;</span><span></span><span>&lt;/<span class="end-tag">script</span>&gt;</span><span>
+<span id="line39"></span></span><span class="comment">&lt;!--BEGIN FIRSTIMPRESSION TAG --&gt;</span><span>
+<span id="line40"></span></span><span>&lt;<span class="start-tag">script</span> <span class="attribute-name">data-cfasync</span>='<a class="attribute-value">false</a>' <span class="attribute-name">type</span>='<a class="attribute-value">text/javascript</a>'&gt;</span><span>
+<span id="line41"></span>	window.apd_options = { 'websiteId': 5731, 'runFromFrame': false };
+<span id="line42"></span>	(function() {
+<span id="line43"></span>		var w = window.apd_options.runFromFrame ? window.top : window;
+<span id="line44"></span>		if(window.apd_options.runFromFrame &amp;&amp; w!=window.parent) w=window.parent;
+<span id="line45"></span>		if (w.location.hash.indexOf('apdAdmin') != -1){if(typeof(Storage) !== 'undefined') {w.localStorage.apdAdmin = 1;}}
+<span id="line46"></span>		var adminMode = ((typeof(Storage) == 'undefined') || (w.localStorage.apdAdmin == 1));
+<span id="line47"></span>		w.apd_options=window.apd_options;
+<span id="line48"></span>		var apd = w.document.createElement('script'); apd.type = 'text/javascript'; apd.async = true;
+<span id="line49"></span>		apd.src = '//' + (adminMode ? 'cdn' : 'ecdn') + '.firstimpression.io/' + (adminMode ? 'apd.js?id=' + window.apd_options.websiteId : 'apd_client.js') ;
+<span id="line50"></span>		var s = w.document.getElementsByTagName('head')[0]; s.appendChild(apd);
+<span id="line51"></span>	})();</span><span>&lt;/<span class="end-tag">script</span>&gt;</span><span>
+<span id="line52"></span></span><span class="comment">&lt;!-- END FIRSTIMPRESSION TAG --&gt;</span><span>
+<span id="line53"></span></span><span>&lt;<span class="start-tag">script</span> <span class="attribute-name">type</span>="<a class="attribute-value">text/javascript</a>" <span class="attribute-name">src</span>="<a class="attribute-value" href="view-source:https://cdn.thisiswaldo.com/static/js/1668.js">https://cdn.thisiswaldo.com/static/js/1668.js</a>"&gt;</span><span></span><span>&lt;/<span class="end-tag">script</span>&gt;</span><span>
+<span id="line54"></span></span><span>&lt;/<span class="end-tag">head</span>&gt;</span><span>
+<span id="line55"></span>    </span><span>&lt;<span class="start-tag">body</span>&gt;</span><span>
+<span id="line56"></span>        </span><span>&lt;<span class="start-tag">div</span> <span class="attribute-name">id</span>="<a class="attribute-value">fb-root</a>"&gt;</span><span></span><span>&lt;/<span class="end-tag">div</span>&gt;</span><span>
+<span id="line57"></span>
+<span id="line58"></span>        </span><span>&lt;<span class="start-tag">div</span> <span class="attribute-name">id</span>="<a class="attribute-value">wrapper</a>"&gt;</span><span>
+<span id="line59"></span>            </span><span>&lt;<span class="start-tag">div</span> <span class="attribute-name">class</span>="<a class="attribute-value">container navigation</a>"&gt;</span><span>
+<span id="line60"></span>	  </span><span>&lt;<span class="start-tag">div</span> <span class="attribute-name">class</span>="<a class="attribute-value">navbar navbar-inverse2</a>"&gt;</span><span>
+<span id="line61"></span>		  </span><span>&lt;<span class="start-tag">script</span>&gt;</span><span>
+<span id="line62"></span>			function reloadMe() {
+<span id="line63"></span>				window.location.reload();
+<span id="line64"></span>			}
+<span id="line65"></span>			function getInterval(){
+<span id="line66"></span>				var lowerBound = 420;
+<span id="line67"></span>				var upperBound = 840;
+<span id="line68"></span>				
+<span id="line69"></span>				var randNum = Math.floor((upperBound-lowerBound+1)*Math.random()+lowerBound) * 1000;
+<span id="line70"></span>				return randNum;
+<span id="line71"></span>			}
+<span id="line72"></span>			var interval = getInterval();
+<span id="line73"></span>			var srcInterval = setInterval("reloadMe()",interval);
+<span id="line74"></span>			</span><span>&lt;/<span class="end-tag">script</span>&gt;</span><span>
+<span id="line75"></span></span><span>&lt;<span class="start-tag">div</span> <span class="attribute-name">style</span>="<a class="attribute-value">text-align: center;padding-top:5px;height: 100px;</a>"&gt;</span><span></span><span>&lt;<span class="start-tag">div</span> <span class="attribute-name">id</span>="<a class="attribute-value">waldo-tag-1674</a>"&gt;</span><span></span><span>&lt;/<span class="end-tag">div</span>&gt;</span><span></span><span>&lt;/<span class="end-tag">div</span>&gt;</span><span>
+<span id="line76"></span>     </span><span>&lt;<span class="start-tag">div</span> <span class="attribute-name">class</span>="<a class="attribute-value">navbar-header</a>"&gt;</span><span>
+<span id="line77"></span>	     
+<span id="line78"></span>        </span><span>&lt;<span class="start-tag">button</span> <span class="attribute-name">type</span>="<a class="attribute-value">button</a>" <span class="attribute-name">class</span>="<a class="attribute-value">navbar-toggle</a>" <span class="attribute-name">data-toggle</span>="<a class="attribute-value">collapse</a>" <span class="attribute-name">data-target</span>="<a class="attribute-value">.navbar-collapse</a>"&gt;</span><span>
+<span id="line79"></span>          </span><span>&lt;<span class="start-tag">span</span> <span class="attribute-name">class</span>="<a class="attribute-value">glyphicon glyphicon-chevron-down</a>"&gt;</span><span></span><span>&lt;/<span class="end-tag">span</span>&gt;</span><span>
+<span id="line80"></span>        </span><span>&lt;/<span class="end-tag">button</span>&gt;</span><span>        
+<span id="line81"></span>        </span><span>&lt;<span class="start-tag">a</span> <span class="attribute-name">class</span>="<a class="attribute-value">navbar-brand</a>" <span class="attribute-name">href</span>="<a class="attribute-value" href="view-source:https://www.pythonforbeginners.com/">/</a>" <span class="attribute-name">title</span>="<a class="attribute-value">pythonforbeginners.com</a>"&gt;</span><span>
+<span id="line82"></span>          </span><span>&lt;<span class="start-tag">img</span> <span class="attribute-name">src</span>="<a class="attribute-value" href="view-source:https://www.pythonforbeginners.com/static/img/pfb_logo.png">/static/img/pfb_logo.png</a>" <span class="attribute-name">alt</span>="<a class="attribute-value">pythonforbeginners.com</a>"&gt;</span><span>
+<span id="line83"></span>        </span><span>&lt;/<span class="end-tag">a</span>&gt;</span><span>
+<span id="line84"></span>      </span><span>&lt;/<span class="end-tag">div</span>&gt;</span><span>
+<span id="line85"></span>      </span><span>&lt;<span class="start-tag">div</span> <span class="attribute-name">class</span>="<a class="attribute-value">navbar-collapse collapse</a>"&gt;</span><span>
+<span id="line86"></span>        </span><span>&lt;<span class="start-tag">ul</span> <span class="attribute-name">class</span>="<a class="attribute-value">nav navbar-nav</a>"&gt;</span><span>
+<span id="line87"></span>          
+<span id="line88"></span>          </span><span>&lt;<span class="start-tag">li</span>&gt;</span><span></span><span>&lt;<span class="start-tag">a</span> <span class="attribute-name">href</span>="<a class="attribute-value" href="view-source:https://www.pythonforbeginners.com/">/</a>" <span class="attribute-name">title</span>="<a class="attribute-value">Home</a>"&gt;</span><span>Home</span><span>&lt;/<span class="end-tag">a</span>&gt;</span><span></span><span>&lt;/<span class="end-tag">li</span>&gt;</span><span>
+<span id="line89"></span>          </span><span>&lt;<span class="start-tag">li</span>&gt;</span><span></span><span>&lt;<span class="start-tag">a</span> <span class="attribute-name">href</span>="<a class="attribute-value" href="view-source:https://www.pythonforbeginners.com/learn-python/">/learn-python/</a>" <span class="attribute-name">title</span>="<a class="attribute-value">Learn Python</a>"&gt;</span><span>Learn Python</span><span>&lt;/<span class="end-tag">a</span>&gt;</span><span></span><span>&lt;/<span class="end-tag">li</span>&gt;</span><span>
+<span id="line90"></span>          </span><span>&lt;<span class="start-tag">li</span>&gt;</span><span></span><span>&lt;<span class="start-tag">a</span> <span class="attribute-name">href</span>="<a class="attribute-value" href="view-source:https://www.pythonforbeginners.com/basics/">/basics/</a>" <span class="attribute-name">title</span>="<a class="attribute-value">Basics</a>"&gt;</span><span>Basics</span><span>&lt;/<span class="end-tag">a</span>&gt;</span><span></span><span>&lt;/<span class="end-tag">li</span>&gt;</span><span>
+<span id="line91"></span>          </span><span>&lt;<span class="start-tag">li</span>&gt;</span><span></span><span>&lt;<span class="start-tag">a</span> <span class="attribute-name">href</span>="<a class="attribute-value" href="view-source:https://www.pythonforbeginners.com/lists/">/lists/</a>" <span class="attribute-name">title</span>="<a class="attribute-value">lists</a>"&gt;</span><span>Lists</span><span>&lt;/<span class="end-tag">a</span>&gt;</span><span></span><span>&lt;/<span class="end-tag">li</span>&gt;</span><span>
+<span id="line92"></span>          </span><span>&lt;<span class="start-tag">li</span>&gt;</span><span></span><span>&lt;<span class="start-tag">a</span> <span class="attribute-name">href</span>="<a class="attribute-value" href="view-source:https://www.pythonforbeginners.com/dictionary/">/dictionary/</a>" <span class="attribute-name">title</span>="<a class="attribute-value">dictionary</a>"&gt;</span><span>Dictionary</span><span>&lt;/<span class="end-tag">a</span>&gt;</span><span></span><span>&lt;/<span class="end-tag">li</span>&gt;</span><span>
+<span id="line93"></span>          </span><span>&lt;<span class="start-tag">li</span>&gt;</span><span></span><span>&lt;<span class="start-tag">a</span> <span class="attribute-name">href</span>="<a class="attribute-value" href="view-source:https://www.pythonforbeginners.com/code-snippets-source-code/">/code-snippets-source-code/</a>" <span class="attribute-name">title</span>="<a class="attribute-value">code snippets</a>"&gt;</span><span>Code Snippets</span><span>&lt;/<span class="end-tag">a</span>&gt;</span><span></span><span>&lt;/<span class="end-tag">li</span>&gt;</span><span>
+<span id="line94"></span>          </span><span>&lt;<span class="start-tag">li</span>&gt;</span><span></span><span>&lt;<span class="start-tag">a</span> <span class="attribute-name">href</span>="<a class="attribute-value" href="view-source:https://www.pythonforbeginners.com/modules-in-python/">/modules-in-python/</a>" <span class="attribute-name">title</span>="<a class="attribute-value">modules</a>"&gt;</span><span>Modules</span><span>&lt;/<span class="end-tag">a</span>&gt;</span><span></span><span>&lt;/<span class="end-tag">li</span>&gt;</span><span>
+<span id="line95"></span>         </span><span>&lt;/<span class="end-tag">ul</span>&gt;</span><span>          
+<span id="line96"></span>      </span><span>&lt;/<span class="end-tag">div</span>&gt;</span><span>
+<span id="line97"></span>  </span><span>&lt;/<span class="end-tag">div</span>&gt;</span><span>
+<span id="line98"></span></span><span>&lt;/<span class="end-tag">div</span>&gt;</span><span>
+<span id="line99"></span></span><span>&lt;/<span class="end-tag">div</span>&gt;</span><span> 
+<span id="line100"></span></span><span class="error" title="Stray end tag “div”.">&lt;/<span class="end-tag">div</span>&gt;</span><span>
+<span id="line101"></span></span><span>&lt;<span class="start-tag">style</span>&gt;</span><span>
+<span id="line102"></span>.container.content {
+<span id="line103"></span>	margin-top: 0px;
+<span id="line104"></span>	border:2px solid #ccc;
+<span id="line105"></span>	border-radius: 5px; 
+<span id="line106"></span>}
+<span id="line107"></span></span><span>&lt;/<span class="end-tag">style</span>&gt;</span><span>
+<span id="line108"></span>
+<span id="line109"></span>            
+<span id="line110"></span>
+<span id="line111"></span>
+<span id="line112"></span>
+<span id="line113"></span>
+<span id="line114"></span>
+<span id="line115"></span></span><span>&lt;<span class="start-tag">script</span> <span class="attribute-name">type</span>="<a class="attribute-value">text/javascript</a>"&gt;</span><span>
+<span id="line116"></span>
+<span id="line117"></span>	var disqus_shortname = 'pythonbeginners';
+<span id="line118"></span>	var disqus_identifier = "4072 https://www.pythonforbeginners.com/?p=4072";
+<span id="line119"></span>
+<span id="line120"></span>	/* * * DON'T EDIT BELOW THIS LINE * * */
+<span id="line121"></span>	(function () {
+<span id="line122"></span>		var s = document.createElement('script'); s.async = true;
+<span id="line123"></span>		s.type = 'text/javascript';
+<span id="line124"></span>		s.src = '//' + disqus_shortname + '.disqus.com/count.js';
+<span id="line125"></span>		(document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+<span id="line126"></span>	}());
+<span id="line127"></span></span><span>&lt;/<span class="end-tag">script</span>&gt;</span><span>
+<span id="line128"></span>
+<span id="line129"></span></span><span>&lt;<span class="start-tag">script</span> <span class="attribute-name">src</span>="<a class="attribute-value" href="view-source:https://www.pythonforbeginners.com/static/js/ads.js">/static/js/ads.js</a>"&gt;</span><span></span><span>&lt;/<span class="end-tag">script</span>&gt;</span><span>
+<span id="line130"></span>
+<span id="line131"></span></span><span>&lt;<span class="start-tag">script</span> <span class="attribute-name">src</span>="<a class="attribute-value" href="view-source:https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js?skin=desert">https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js?skin=desert</a>"&gt;</span><span></span><span>&lt;/<span class="end-tag">script</span>&gt;</span><span>
+<span id="line132"></span>
+<span id="line133"></span>    </span><span>&lt;<span class="start-tag">div</span> <span class="attribute-name">class</span>="<a class="attribute-value">container content</a>"&gt;</span><span>
+<span id="line134"></span></span><span>&lt;<span class="start-tag">div</span> <span class="attribute-name">style</span>="<a class="attribute-value">text-align: center;margin: 0 auto;width: 970px;</a>"&gt;</span><span>
+<span id="line135"></span></span><span>&lt;/<span class="end-tag">div</span>&gt;</span><span>
+<span id="line136"></span>
+<span id="line137"></span>        </span><span>&lt;<span class="start-tag">div</span> <span class="attribute-name">class</span>="<a class="attribute-value">col-md-7 col-lg-8</a>"&gt;</span><span>
+<span id="line138"></span></span><span>&lt;<span class="start-tag">div</span> <span class="attribute-name">class</span>="<a class="attribute-value">breadcrumb</a>"&gt;</span><span></span><span>&lt;<span class="start-tag">a</span> <span class="attribute-name">href</span>="<a class="attribute-value" href="view-source:https://www.pythonforbeginners.com/">/</a>"&gt;</span><span>Home</span><span>&lt;/<span class="end-tag">a</span>&gt;</span><span> &gt;&gt; Beautiful Soup 4 Python</span><span>&lt;/<span class="end-tag">div</span>&gt;</span><span>
+<span id="line139"></span>
+<span id="line140"></span>
+<span id="line141"></span>            </span><span>&lt;<span class="start-tag">div</span> <span class="attribute-name">class</span>="<a class="attribute-value">post-header</a>"&gt;</span><span>
+<span id="line142"></span>                Mar. 09, 2016
+<span id="line143"></span>                </span><span>&lt;<span class="start-tag">ul</span> <span class="attribute-name">class</span>="<a class="attribute-value">nav nav-pills</a>"&gt;</span><span>
+<span id="line144"></span>                
+<span id="line145"></span>                    </span><span>&lt;<span class="start-tag">li</span>&gt;</span><span></span><span>&lt;<span class="start-tag">a</span> <span class="attribute-name">href</span>="<a class="attribute-value" href="view-source:https://www.pythonforbeginners.com/beautifulsoup/">/beautifulsoup/</a>" <span class="attribute-name">title</span>="<a class="attribute-value">BeautifulSoup</a>"&gt;</span><span></span><span>&lt;<span class="start-tag">span</span> <span class="attribute-name">class</span>="<a class="attribute-value">glyphicon glyphicon-folder-open</a>"&gt;</span><span></span><span>&lt;/<span class="end-tag">span</span>&gt;</span><span><span class="entity"><span>&amp;</span>nbsp;</span><span class="entity"><span>&amp;</span>nbsp;</span>BeautifulSoup</span><span>&lt;/<span class="end-tag">a</span>&gt;</span><span></span><span>&lt;/<span class="end-tag">li</span>&gt;</span><span>
+<span id="line146"></span>                
+<span id="line147"></span>                    </span><span>&lt;<span class="start-tag">li</span>&gt;</span><span></span><span>&lt;<span class="start-tag">a</span> <span class="attribute-name">href</span>="<a class="attribute-value" href="view-source:https://www.pythonforbeginners.com/python-on-the-web/">/python-on-the-web/</a>" <span class="attribute-name">title</span>="<a class="attribute-value">Web <span class="entity"><span>&amp;</span>amp;</span> Internet</a>"&gt;</span><span></span><span>&lt;<span class="start-tag">span</span> <span class="attribute-name">class</span>="<a class="attribute-value">glyphicon glyphicon-folder-open</a>"&gt;</span><span></span><span>&lt;/<span class="end-tag">span</span>&gt;</span><span><span class="entity"><span>&amp;</span>nbsp;</span><span class="entity"><span>&amp;</span>nbsp;</span>Web <span class="entity"><span>&amp;</span>amp;</span> Internet</span><span>&lt;/<span class="end-tag">a</span>&gt;</span><span></span><span>&lt;/<span class="end-tag">li</span>&gt;</span><span>
+<span id="line148"></span>                
+<span id="line149"></span>                </span><span>&lt;/<span class="end-tag">ul</span>&gt;</span><span>
+<span id="line150"></span>            </span><span>&lt;/<span class="end-tag">div</span>&gt;</span><span>
+<span id="line151"></span>            </span><span>&lt;<span class="start-tag">h1</span>&gt;</span><span>Beautiful Soup 4 Python</span><span>&lt;/<span class="end-tag">h1</span>&gt;</span><span>
+<span id="line152"></span>          
+<span id="line153"></span></span><span>&lt;<span class="start-tag">div</span> <span class="attribute-name">align</span>="<a class="attribute-value">left</a>"&gt;</span><span>
+<span id="line154"></span>
+<span id="line155"></span></span><span>&lt;/<span class="end-tag">div</span>&gt;</span><span>
+<span id="line156"></span>
+<span id="line157"></span>            </span><span>&lt;<span class="start-tag">div</span> <span class="attribute-name">class</span>="<a class="attribute-value">post-bodycopy cf</a>"&gt;</span><span>
+<span id="line158"></span>                </span><span>&lt;<span class="start-tag">h2</span>&gt;</span><span>Overview</span><span>&lt;/<span class="end-tag">h2</span>&gt;</span><span>
+<span id="line159"></span></span><span>&lt;<span class="start-tag">pre</span>&gt;</span><span>
+<span id="line160"></span>This article is an introduction to BeautifulSoup 4 in Python.
+<span id="line161"></span>
+<span id="line162"></span>If you want to know more I recommend you to read the official documentation
+<span id="line163"></span>found </span><span>&lt;<span class="start-tag">a</span> <span class="attribute-name">href</span>="<a class="attribute-value" href="view-source:http://www.crummy.com/software/BeautifulSoup/bs4/doc/">http://www.crummy.com/software/BeautifulSoup/bs4/doc/</a>" <span class="attribute-name">title</span>="<a class="attribute-value">b4soup_doc</a>" <span class="attribute-name">target</span>="<a class="attribute-value">_blank</a>"&gt;</span><span>here</span><span>&lt;/<span class="end-tag">a</span>&gt;</span><span>.
+<span id="line164"></span></span><span>&lt;/<span class="end-tag">pre</span>&gt;</span><span>
+<span id="line165"></span>
+<span id="line166"></span></span><span>&lt;<span class="start-tag">h2</span>&gt;</span><span>What is Beautiful Soup?</span><span>&lt;/<span class="end-tag">h2</span>&gt;</span><span>
+<span id="line167"></span></span><span>&lt;<span class="start-tag">pre</span>&gt;</span><span>
+<span id="line168"></span>Beautiful Soup is a Python library for pulling data out of HTML and XML files. 
+<span id="line169"></span></span><span>&lt;/<span class="end-tag">pre</span>&gt;</span><span>
+<span id="line170"></span>
+<span id="line171"></span></span><span>&lt;<span class="start-tag">h2</span>&gt;</span><span>BeautifulSoup 3 or 4?</span><span>&lt;/<span class="end-tag">h2</span>&gt;</span><span>
+<span id="line172"></span></span><span>&lt;<span class="start-tag">pre</span>&gt;</span><span>
+<span id="line173"></span>Beautiful Soup 3 has been replaced by Beautiful Soup 4.
+<span id="line174"></span>
+<span id="line175"></span>Beautiful Soup 3 only works on Python 2.x, but Beautiful Soup 4 also works on
+<span id="line176"></span>Python 3.x. 
+<span id="line177"></span>
+<span id="line178"></span>Beautiful Soup 4 is faster, has more features, and works with third-party parsers
+<span id="line179"></span>like lxml and html5lib. 
+<span id="line180"></span>
+<span id="line181"></span>You should use Beautiful Soup 4 for all new projects.
+<span id="line182"></span></span><span>&lt;/<span class="end-tag">pre</span>&gt;</span><span>
+<span id="line183"></span>
+<span id="line184"></span></span><span>&lt;<span class="start-tag">h2</span>&gt;</span><span>Installing Beautiful Soup</span><span>&lt;/<span class="end-tag">h2</span>&gt;</span><span>
+<span id="line185"></span></span><span>&lt;<span class="start-tag">pre</span>&gt;</span><span>
+<span id="line186"></span>If you run Debian or Ubuntu, you can install Beautiful Soup with the system
+<span id="line187"></span>package manager
+<span id="line188"></span></span><span>&lt;/<span class="end-tag">pre</span>&gt;</span><span>
+<span id="line189"></span></span><span>&lt;<span class="start-tag">pre</span> <span class="attribute-name">class</span>="<a class="attribute-value">prettyprint</a>"&gt;</span><span>
+<span id="line190"></span>apt-get install python-bs4
+<span id="line191"></span></span><span>&lt;/<span class="end-tag">pre</span>&gt;</span><span>
+<span id="line192"></span>
+<span id="line193"></span></span><span>&lt;<span class="start-tag">pre</span>&gt;</span><span>
+<span id="line194"></span>Beautiful Soup 4 is published through PyPi, so if you can’t install it with the
+<span id="line195"></span>system packager, you can install it with easy_install or pip. 
+<span id="line196"></span>
+<span id="line197"></span>The package name is beautifulsoup4, and the same package works on Python 2 and
+<span id="line198"></span>Python 3.
+<span id="line199"></span></span><span>&lt;/<span class="end-tag">pre</span>&gt;</span><span>
+<span id="line200"></span>
+<span id="line201"></span></span><span>&lt;<span class="start-tag">pre</span> <span class="attribute-name">class</span>="<a class="attribute-value">prettyprint</a>"&gt;</span><span>
+<span id="line202"></span>easy_install beautifulsoup4
+<span id="line203"></span>
+<span id="line204"></span>pip install beautifulsoup4
+<span id="line205"></span></span><span>&lt;/<span class="end-tag">pre</span>&gt;</span><span>
+<span id="line206"></span>
+<span id="line207"></span></span><span>&lt;<span class="start-tag">pre</span>&gt;</span><span>
+<span id="line208"></span>If you don’t have easy_install or pip installed, you can </span><span>&lt;<span class="start-tag">a</span> <span class="attribute-name">href</span>="<a class="attribute-value" href="view-source:http://www.crummy.com/software/BeautifulSoup/bs4/download/4.0/">http://www.crummy.com/software/BeautifulSoup/bs4/download/4.0/</a>" <span class="attribute-name">title</span>="<a class="attribute-value">crummy_bs4</a>" <span class="attribute-name">target</span>="<a class="attribute-value">_blank</a>"&gt;</span><span>download</span><span>&lt;/<span class="end-tag">a</span>&gt;</span><span> the Beautiful
+<span id="line209"></span>Soup 4 source tarball and install it with setup.py.
+<span id="line210"></span>
+<span id="line211"></span>python setup.py install
+<span id="line212"></span></span><span>&lt;/<span class="end-tag">pre</span>&gt;</span><span>
+<span id="line213"></span>
+<span id="line214"></span></span><span>&lt;<span class="start-tag">h2</span>&gt;</span><span>BeautifulSoup Usage</span><span>&lt;/<span class="end-tag">h2</span>&gt;</span><span>
+<span id="line215"></span></span><span>&lt;<span class="start-tag">pre</span>&gt;</span><span>
+<span id="line216"></span>Right after the installation you can start using BeautifulSoup. 
+<span id="line217"></span>
+<span id="line218"></span>At the beginning of your Python script, import the library
+<span id="line219"></span>
+<span id="line220"></span>Now you have to pass something to BeautifulSoup to create a soup object. 
+<span id="line221"></span>
+<span id="line222"></span>That could be a document or an URL. 
+<span id="line223"></span>
+<span id="line224"></span>BeautifulSoup does not fetch the web page for you, you have to do that yourself. 
+<span id="line225"></span>
+<span id="line226"></span>That's why I use urllib2 in combination with the BeautifulSoup library.
+<span id="line227"></span></span><span>&lt;/<span class="end-tag">pre</span>&gt;</span><span>
+<span id="line228"></span>
+<span id="line229"></span></span><span>&lt;<span class="start-tag">h2</span>&gt;</span><span>Filtering</span><span>&lt;/<span class="end-tag">h2</span>&gt;</span><span>
+<span id="line230"></span></span><span>&lt;<span class="start-tag">pre</span>&gt;</span><span>
+<span id="line231"></span>There are some different filters you can use with the search API. 
+<span id="line232"></span>
+<span id="line233"></span>Below I will show you some examples on how you can pass those filters into
+<span id="line234"></span>methods such as find_all 
+<span id="line235"></span>
+<span id="line236"></span>You can use these filters based on a tag’s name, on its attributes, on the text
+<span id="line237"></span>of a string, or on some combination of these.
+<span id="line238"></span></span><span>&lt;/<span class="end-tag">pre</span>&gt;</span><span>
+<span id="line239"></span>
+<span id="line240"></span></span><span>&lt;<span class="start-tag">h5</span>&gt;</span><span>A string</span><span>&lt;/<span class="end-tag">h5</span>&gt;</span><span>
+<span id="line241"></span></span><span>&lt;<span class="start-tag">pre</span>&gt;</span><span>
+<span id="line242"></span>The simplest filter is a string. 
+<span id="line243"></span>
+<span id="line244"></span>Pass a string to a search method and Beautiful Soup will perform a match against
+<span id="line245"></span>that exact string. 
+<span id="line246"></span>
+<span id="line247"></span>This code finds all the 'b' tags in the document (you can replace b with any
+<span id="line248"></span>tag you want to find)
+<span id="line249"></span></span><span>&lt;/<span class="end-tag">pre</span>&gt;</span><span>
+<span id="line250"></span>
+<span id="line251"></span></span><span>&lt;<span class="start-tag">pre</span> <span class="attribute-name">class</span>="<a class="attribute-value">prettyprint</a>"&gt;</span><span>
+<span id="line252"></span>soup.find_all('b')
+<span id="line253"></span></span><span>&lt;/<span class="end-tag">pre</span>&gt;</span><span>
+<span id="line254"></span>
+<span id="line255"></span></span><span>&lt;<span class="start-tag">pre</span>&gt;</span><span>
+<span id="line256"></span>If you pass in a byte string, Beautiful Soup will assume the string is encoded
+<span id="line257"></span>as UTF-8. 
+<span id="line258"></span>
+<span id="line259"></span>You can avoid this by passing in a Unicode string instead.
+<span id="line260"></span></span><span>&lt;/<span class="end-tag">pre</span>&gt;</span><span>
+<span id="line261"></span>
+<span id="line262"></span></span><span>&lt;<span class="start-tag">h5</span>&gt;</span><span>A regular expression</span><span>&lt;/<span class="end-tag">h5</span>&gt;</span><span>
+<span id="line263"></span></span><span>&lt;<span class="start-tag">pre</span>&gt;</span><span>
+<span id="line264"></span>If you pass in a regular expression object, Beautiful Soup will filter against
+<span id="line265"></span>that regular expression using its match() method. 
+<span id="line266"></span>
+<span id="line267"></span>This code finds all the tags whose names start with the letter "b",
+<span id="line268"></span>in this case, the 'body' tag and the 'b' tag:
+<span id="line269"></span></span><span>&lt;/<span class="end-tag">pre</span>&gt;</span><span>
+<span id="line270"></span>
+<span id="line271"></span></span><span>&lt;<span class="start-tag">pre</span> <span class="attribute-name">class</span>="<a class="attribute-value">prettyprint</a>"&gt;</span><span>
+<span id="line272"></span>import re
+<span id="line273"></span>for tag in soup.find_all(re.compile("^b")):
+<span id="line274"></span>    print(tag.name)</span><span class="error" title="Stray end tag “strong”.">&lt;/<span class="end-tag">strong</span>&gt;</span><span>
+<span id="line275"></span></span><span>&lt;/<span class="end-tag">pre</span>&gt;</span><span>
+<span id="line276"></span>
+<span id="line277"></span></span><span>&lt;<span class="start-tag">pre</span>&gt;</span><span>
+<span id="line278"></span>This code finds all the tags whose names contain the letter "t":
+<span id="line279"></span></span><span>&lt;/<span class="end-tag">pre</span>&gt;</span><span>
+<span id="line280"></span>
+<span id="line281"></span></span><span>&lt;<span class="start-tag">pre</span> <span class="attribute-name">class</span>="<a class="attribute-value">prettyprint</a>"&gt;</span><span>
+<span id="line282"></span>for tag in soup.find_all(re.compile("t")):
+<span id="line283"></span>    print(tag.name)
+<span id="line284"></span></span><span>&lt;/<span class="end-tag">pre</span>&gt;</span><span>
+<span id="line285"></span>
+<span id="line286"></span></span><span>&lt;<span class="start-tag">h5</span>&gt;</span><span>A list</span><span>&lt;/<span class="end-tag">h5</span>&gt;</span><span>
+<span id="line287"></span></span><span>&lt;<span class="start-tag">pre</span>&gt;</span><span>
+<span id="line288"></span>If you pass in a list, Beautiful Soup will allow a string match against any
+<span id="line289"></span>item in that list. 
+<span id="line290"></span>
+<span id="line291"></span>This code finds all the 'a' tags and all the 'b' tags
+<span id="line292"></span></span><span>&lt;/<span class="end-tag">pre</span>&gt;</span><span>
+<span id="line293"></span>
+<span id="line294"></span></span><span>&lt;<span class="start-tag">pre</span> <span class="attribute-name">class</span>="<a class="attribute-value">prettyprint</a>"&gt;</span><span>
+<span id="line295"></span>print soup.find_all(["a", "b"])
+<span id="line296"></span></span><span>&lt;/<span class="end-tag">pre</span>&gt;</span><span>
+<span id="line297"></span>
+<span id="line298"></span></span><span>&lt;<span class="start-tag">h5</span>&gt;</span><span>True</span><span>&lt;/<span class="end-tag">h5</span>&gt;</span><span>
+<span id="line299"></span></span><span>&lt;<span class="start-tag">pre</span>&gt;</span><span>
+<span id="line300"></span>The value True matches everything it can. 
+<span id="line301"></span>
+<span id="line302"></span>This code finds all the tags in the document, but none of the text strings:
+<span id="line303"></span></span><span>&lt;/<span class="end-tag">pre</span>&gt;</span><span>
+<span id="line304"></span>
+<span id="line305"></span></span><span>&lt;<span class="start-tag">pre</span> <span class="attribute-name">class</span>="<a class="attribute-value">prettyprint</a>"&gt;</span><span>
+<span id="line306"></span>for tag in soup.find_all(True):
+<span id="line307"></span>    print(tag.name)
+<span id="line308"></span></span><span>&lt;/<span class="end-tag">pre</span>&gt;</span><span>
+<span id="line309"></span>
+<span id="line310"></span></span><span>&lt;<span class="start-tag">h4</span>&gt;</span><span>A function</span><span>&lt;/<span class="end-tag">h4</span>&gt;</span><span>
+<span id="line311"></span></span><span>&lt;<span class="start-tag">pre</span>&gt;</span><span>
+<span id="line312"></span>If none of the other matches work for you, define a function that takes an
+<span id="line313"></span>element as its only argument. 
+<span id="line314"></span>
+<span id="line315"></span>Please see the official documentation if you want to do that. 
+<span id="line316"></span></span><span>&lt;/<span class="end-tag">pre</span>&gt;</span><span>
+<span id="line317"></span>
+<span id="line318"></span></span><span>&lt;<span class="start-tag">h2</span>&gt;</span><span>BeautifulSoup Object</span><span>&lt;/<span class="end-tag">h2</span>&gt;</span><span>
+<span id="line319"></span></span><span>&lt;<span class="start-tag">pre</span>&gt;</span><span>
+<span id="line320"></span>As an example, we'll use the very website you currently are on 
+<span id="line321"></span>(https://www.pythonforbeginners.com)
+<span id="line322"></span>
+<span id="line323"></span>To parse the data from the content, we simply create a BeautifulSoup object for it
+<span id="line324"></span>
+<span id="line325"></span>That will create a soup object of the content of the url we passed in. 
+<span id="line326"></span>
+<span id="line327"></span>From this point, we can now use the Beautiful Soup methods on that soup object.
+<span id="line328"></span>
+<span id="line329"></span>We can use the prettify method to turn a BS parse tree into a nicely formatted
+<span id="line330"></span>Unicode string
+<span id="line331"></span></span><span>&lt;/<span class="end-tag">pre</span>&gt;</span><span>
+<span id="line332"></span>
+<span id="line333"></span></span><span>&lt;<span class="start-tag">h5</span>&gt;</span><span>The Find_all method</span><span>&lt;/<span class="end-tag">h5</span>&gt;</span><span>
+<span id="line334"></span></span><span>&lt;<span class="start-tag">pre</span>&gt;</span><span>
+<span id="line335"></span>The find_all method is one of the most common methods in BeautifulSoup. 
+<span id="line336"></span>
+<span id="line337"></span>It looks through a tag’s descendants and retrieves all descendants that match
+<span id="line338"></span>your filters. 
+<span id="line339"></span></span><span>&lt;/<span class="end-tag">pre</span>&gt;</span><span>
+<span id="line340"></span>
+<span id="line341"></span></span><span>&lt;<span class="start-tag">pre</span> <span class="attribute-name">class</span>="<a class="attribute-value">prettyprint</a>"&gt;</span><span>
+<span id="line342"></span>soup.find_all("title")
+<span id="line343"></span>
+<span id="line344"></span>soup.find_all("p", "title")
+<span id="line345"></span>
+<span id="line346"></span>soup.find_all("a")
+<span id="line347"></span>
+<span id="line348"></span>soup.find_all(id="link2")
+<span id="line349"></span></span><span>&lt;/<span class="end-tag">pre</span>&gt;</span><span>
+<span id="line350"></span>
+<span id="line351"></span></span><span>&lt;<span class="start-tag">pre</span>&gt;</span><span>Let's see some examples on how to use BS 4</span><span>&lt;/<span class="end-tag">pre</span>&gt;</span><span>
+<span id="line352"></span>
+<span id="line353"></span></span><span>&lt;<span class="start-tag">pre</span> <span class="attribute-name">class</span>="<a class="attribute-value">prettyprint</a>"&gt;</span><span>
+<span id="line354"></span>from bs4 import BeautifulSoup
+<span id="line355"></span>import urllib2
+<span id="line356"></span>
+<span id="line357"></span>url = "https://www.pythonforbeginners.com"
+<span id="line358"></span>
+<span id="line359"></span>content = urllib2.urlopen(url).read()
+<span id="line360"></span>
+<span id="line361"></span>soup = BeautifulSoup(content)
+<span id="line362"></span>
+<span id="line363"></span>print soup.prettify()
+<span id="line364"></span>
+<span id="line365"></span>print title
+<span id="line366"></span>&gt;&gt; 'title'? Python For Beginners</span><span class="error" title="Stray end tag “title”.">&lt;/<span class="end-tag">title</span>&gt;</span><span>
+<span id="line367"></span>
+<span id="line368"></span>print soup.title.string
+<span id="line369"></span>&gt;&gt; ? Python For Beginners
+<span id="line370"></span>
+<span id="line371"></span>print soup.p
+<span id="line372"></span> </span><span>&lt;<span class="start-tag">p</span> <span class="attribute-name">id</span>="<a class="attribute-value">tagline</a>"&gt;</span><span></span><span>&lt;/<span class="end-tag">p</span>&gt;</span><span>
+<span id="line373"></span>
+<span id="line374"></span>print soup.a
+<span id="line375"></span></span><span>&lt;<span class="start-tag">a</span> <span class="attribute-name">href</span>="<a class="attribute-value" href="view-source:https://www.pythonforbeginners.com/">https://www.pythonforbeginners.com</a>"&gt;</span><span>Python For Beginners</span><span>&lt;/<span class="end-tag">a</span>&gt;</span><span>
+<span id="line376"></span></span><span>&lt;/<span class="end-tag">pre</span>&gt;</span><span>
+<span id="line377"></span>
+<span id="line378"></span></span><span>&lt;<span class="start-tag">h2</span>&gt;</span><span>Navigating the Parse Tree</span><span>&lt;/<span class="end-tag">h2</span>&gt;</span><span>
+<span id="line379"></span></span><span>&lt;<span class="start-tag">pre</span>&gt;</span><span>
+<span id="line380"></span>If you want to know how to navigate the tree please see the official </span><span>&lt;<span class="start-tag">a</span> <span class="attribute-name">href</span>="<a class="attribute-value" href="view-source:http://www.crummy.com/software/BeautifulSoup/bs4/doc/#navigating-the-tree">http://www.crummy.com/software/BeautifulSoup/bs4/doc/#navigating-the-tree</a>" <span class="attribute-name">title</span>="<a class="attribute-value">navigation_bs4</a>" <span class="attribute-name">target</span>="<a class="attribute-value">_blank</a>"&gt;</span><span>documentation</span><span>&lt;/<span class="end-tag">a</span>&gt;</span><span>
+<span id="line381"></span>
+<span id="line382"></span>There you can read about the following things:
+<span id="line383"></span>
+<span id="line384"></span></span><span>&lt;<span class="start-tag">strong</span>&gt;</span><span>Going down</span><span>&lt;/<span class="end-tag">strong</span>&gt;</span><span>
+<span id="line385"></span>        Navigating using tag names
+<span id="line386"></span>        .contents and .children
+<span id="line387"></span>        .descendants
+<span id="line388"></span>        .string
+<span id="line389"></span>        .strings and stripped_strings
+<span id="line390"></span>
+<span id="line391"></span></span><span>&lt;<span class="start-tag">strong</span>&gt;</span><span>Going up</span><span>&lt;/<span class="end-tag">strong</span>&gt;</span><span>
+<span id="line392"></span>        .parent
+<span id="line393"></span>        .parents
+<span id="line394"></span>
+<span id="line395"></span></span><span>&lt;<span class="start-tag">strong</span>&gt;</span><span>Going sideways</span><span>&lt;/<span class="end-tag">strong</span>&gt;</span><span>
+<span id="line396"></span>        .next_sibling and .previous_sibling
+<span id="line397"></span>        .next_siblings and .previous_siblings
+<span id="line398"></span>
+<span id="line399"></span></span><span>&lt;<span class="start-tag">strong</span>&gt;</span><span>Going back and forth</span><span>&lt;/<span class="end-tag">strong</span>&gt;</span><span>
+<span id="line400"></span>        .next_element and .previous_element
+<span id="line401"></span>        .next_elements and .previous_elements
+<span id="line402"></span></span><span>&lt;/<span class="end-tag">pre</span>&gt;</span><span>
+<span id="line403"></span>
+<span id="line404"></span></span><span>&lt;<span class="start-tag">h2</span>&gt;</span><span>Extracting all the URLs found within a page 'a' tags</span><span>&lt;/<span class="end-tag">h2</span>&gt;</span><span>
+<span id="line405"></span></span><span>&lt;<span class="start-tag">pre</span>&gt;</span><span>
+<span id="line406"></span>One common task is extracting all the URLs found within a page’s 'a' tags
+<span id="line407"></span>
+<span id="line408"></span>Using the find_all method, gives us a whole list of elements with the tag "a". 
+<span id="line409"></span></span><span>&lt;/<span class="end-tag">pre</span>&gt;</span><span>
+<span id="line410"></span>
+<span id="line411"></span></span><span>&lt;<span class="start-tag">pre</span> <span class="attribute-name">class</span>="<a class="attribute-value">prettyprint</a>"&gt;</span><span>
+<span id="line412"></span>for link in soup.find_all('a'):
+<span id="line413"></span>    print(link.get('href'))
+<span id="line414"></span></span><span>&lt;/<span class="end-tag">pre</span>&gt;</span><span>
+<span id="line415"></span>
+<span id="line416"></span></span><span>&lt;<span class="start-tag">pre</span>&gt;</span><span>
+<span id="line417"></span>Output:
+<span id="line418"></span></span><span>&lt;/<span class="end-tag">pre</span>&gt;</span><span>
+<span id="line419"></span>
+<span id="line420"></span></span><span>&lt;<span class="start-tag">pre</span>&gt;</span><span>
+<span id="line421"></span>..https://www.pythonforbeginners.com
+<span id="line422"></span>..https://www.pythonforbeginners.com/python-overview-start-here/
+<span id="line423"></span>..https://www.pythonforbeginners.com/dictionary/
+<span id="line424"></span>..https://www.pythonforbeginners.com/python-functions-cheat-sheet/
+<span id="line425"></span>..https://www.pythonforbeginners.com/lists/python-lists-cheat-sheet/
+<span id="line426"></span>..https://www.pythonforbeginners.com/loops/
+<span id="line427"></span>..https://www.pythonforbeginners.com/python-modules/
+<span id="line428"></span>..https://www.pythonforbeginners.com/strings/
+<span id="line429"></span>..https://www.pythonforbeginners.com/sitemap/
+<span id="line430"></span>...
+<span id="line431"></span>...
+<span id="line432"></span></span><span>&lt;/<span class="end-tag">pre</span>&gt;</span><span>
+<span id="line433"></span>
+<span id="line434"></span></span><span>&lt;<span class="start-tag">h2</span>&gt;</span><span>Extracting all the text from a page</span><span>&lt;/<span class="end-tag">h2</span>&gt;</span><span>
+<span id="line435"></span></span><span>&lt;<span class="start-tag">pre</span>&gt;</span><span>
+<span id="line436"></span>Another common task is extracting all the text from a page:
+<span id="line437"></span></span><span>&lt;/<span class="end-tag">pre</span>&gt;</span><span>
+<span id="line438"></span>
+<span id="line439"></span></span><span>&lt;<span class="start-tag">pre</span> <span class="attribute-name">class</span>="<a class="attribute-value">prettyprint</a>"&gt;</span><span>
+<span id="line440"></span>print(soup.get_text())
+<span id="line441"></span></span><span>&lt;/<span class="end-tag">pre</span>&gt;</span><span>
+<span id="line442"></span>
+<span id="line443"></span></span><span>&lt;<span class="start-tag">pre</span>&gt;</span><span>
+<span id="line444"></span>Output:
+<span id="line445"></span></span><span>&lt;/<span class="end-tag">pre</span>&gt;</span><span>
+<span id="line446"></span>
+<span id="line447"></span></span><span>&lt;<span class="start-tag">pre</span>&gt;</span><span>
+<span id="line448"></span>Python For Beginners
+<span id="line449"></span>Python Basics
+<span id="line450"></span>Dictionary
+<span id="line451"></span>Functions
+<span id="line452"></span>Lists
+<span id="line453"></span>Loops
+<span id="line454"></span>Modules
+<span id="line455"></span>Strings
+<span id="line456"></span>Sitemap
+<span id="line457"></span>...
+<span id="line458"></span>...
+<span id="line459"></span></span><span>&lt;/<span class="end-tag">pre</span>&gt;</span><span>
+<span id="line460"></span>
+<span id="line461"></span></span><span>&lt;<span class="start-tag">h2</span>&gt;</span><span>Get all links from Reddit</span><span>&lt;/<span class="end-tag">h2</span>&gt;</span><span>
+<span id="line462"></span></span><span>&lt;<span class="start-tag">pre</span>&gt;</span><span>
+<span id="line463"></span>As a last example, let's grab all the links from Reddit
+<span id="line464"></span></span><span>&lt;/<span class="end-tag">pre</span>&gt;</span><span>
+<span id="line465"></span>
+<span id="line466"></span></span><span>&lt;<span class="start-tag">pre</span> <span class="attribute-name">class</span>="<a class="attribute-value">prettyprint</a>"&gt;</span><span>
+<span id="line467"></span>
+<span id="line468"></span>from bs4 import BeautifulSoup
+<span id="line469"></span>import urllib2
+<span id="line470"></span>
+<span id="line471"></span>redditFile = urllib2.urlopen("http://www.reddit.com")
+<span id="line472"></span>redditHtml = redditFile.read()
+<span id="line473"></span>redditFile.close()
+<span id="line474"></span>
+<span id="line475"></span>soup = BeautifulSoup(redditHtml)
+<span id="line476"></span>redditAll = soup.find_all("a")
+<span id="line477"></span>for links in soup.find_all('a'):
+<span id="line478"></span>    print (links.get('href'))
+<span id="line479"></span></span><span>&lt;/<span class="end-tag">pre</span>&gt;</span><span>
+<span id="line480"></span>
+<span id="line481"></span></span><span>&lt;<span class="start-tag">pre</span>&gt;</span><span>Output:
+<span id="line482"></span></span><span>&lt;/<span class="end-tag">pre</span>&gt;</span><span>
+<span id="line483"></span>
+<span id="line484"></span></span><span>&lt;<span class="start-tag">pre</span>&gt;</span><span>
+<span id="line485"></span>#content
+<span id="line486"></span>..http://www.reddit.com/r/AdviceAnimals/
+<span id="line487"></span>..http://www.reddit.com/r/announcements/
+<span id="line488"></span>..http://www.reddit.com/r/AskReddit/
+<span id="line489"></span>..http://www.reddit.com/r/atheism/
+<span id="line490"></span>..http://www.reddit.com/r/aww/
+<span id="line491"></span>..http://www.reddit.com/r/bestof/
+<span id="line492"></span>..http://www.reddit.com/r/blog/
+<span id="line493"></span>..http://www.reddit.com/r/funny/
+<span id="line494"></span>..http://www.reddit.com/r/gaming/
+<span id="line495"></span>..http://www.reddit.com/r/IAmA/
+<span id="line496"></span>..http://www.reddit.com/r/movies/
+<span id="line497"></span>..http://www.reddit.com/r/Music/
+<span id="line498"></span>..http://www.reddit.com/r/pics/
+<span id="line499"></span>..http://www.reddit.com/r/politics/
+<span id="line500"></span>...
+<span id="line501"></span></span><span>&lt;/<span class="end-tag">pre</span>&gt;</span><span>
+<span id="line502"></span>
+<span id="line503"></span></span><span>&lt;<span class="start-tag">pre</span>&gt;</span><span>
+<span id="line504"></span>For more information, please see the </span><span>&lt;<span class="start-tag">a</span> <span class="attribute-name">href</span>="<a class="attribute-value" href="view-source:https://beautiful-soup-4.readthedocs.org/en/latest/">https://beautiful-soup-4.readthedocs.org/en/latest/</a>" <span class="attribute-name">title</span>="<a class="attribute-value">bs4</a>" <span class="attribute-name">target</span>="<a class="attribute-value">_blank</a>"&gt;</span><span>official</span><span>&lt;/<span class="end-tag">a</span>&gt;</span><span> documentation.
+<span id="line505"></span></span><span>&lt;/<span class="end-tag">pre</span>&gt;</span><span>
+<span id="line506"></span>             
+<span id="line507"></span></span><span>&lt;<span class="start-tag">section</span> <span class="attribute-name">class</span>="<a class="attribute-value">a</a>"&gt;</span><span>
+<span id="line508"></span></span><span>&lt;<span class="start-tag">h3</span>&gt;</span><span>Recommended Python Training – </span><span>&lt;<span class="start-tag">a</span> <span class="attribute-name">href</span>="<a class="attribute-value" href="view-source:https://www.datacamp.com/?tap_a=5644-dce66f&amp;tap_s=75426-9cf8ad&amp;tm_source=recommended">https://www.datacamp.com/?tap_a=5644-dce66f<span><span class="error" title="“&amp;” did not start a character reference. (“&amp;” probably should have been escaped as “&amp;amp;”.)">&amp;</span>ta</span>p_s=75426-9cf8ad<span><span class="error" title="“&amp;” did not start a character reference. (“&amp;” probably should have been escaped as “&amp;amp;”.)">&amp;</span>t</span>m_source=recommended</a>"&gt;</span><span>DataCamp</span><span>&lt;/<span class="end-tag">a</span>&gt;</span><span></span><span>&lt;/<span class="end-tag">h3</span>&gt;</span><span></span><span>&lt;<span class="start-tag">p</span>&gt;</span><span>
+<span id="line509"></span>For </span><span>&lt;<span class="start-tag">a</span> <span class="attribute-name">href</span>="<a class="attribute-value" href="view-source:https://www.datacamp.com/?tap_a=5644-dce66f&amp;tap_s=75426-9cf8ad&amp;tm_source=recommended">https://www.datacamp.com/?tap_a=5644-dce66f<span><span class="error" title="“&amp;” did not start a character reference. (“&amp;” probably should have been escaped as “&amp;amp;”.)">&amp;</span>ta</span>p_s=75426-9cf8ad<span><span class="error" title="“&amp;” did not start a character reference. (“&amp;” probably should have been escaped as “&amp;amp;”.)">&amp;</span>t</span>m_source=recommended</a>"&gt;</span><span>Python training</span><span>&lt;/<span class="end-tag">a</span>&gt;</span><span>, our top recommendation is DataCamp.
+<span id="line510"></span></span><span>&lt;/<span class="end-tag">p</span>&gt;</span><span></span><span>&lt;<span class="start-tag">p</span>&gt;</span><span>
+<span id="line511"></span></span><span>&lt;<span class="start-tag">a</span> <span class="attribute-name">href</span>="<a class="attribute-value" href="view-source:https://www.datacamp.com/?tap_a=5644-dce66f&amp;tap_s=75426-9cf8ad&amp;tm_source=recommended">https://www.datacamp.com/?tap_a=5644-dce66f<span><span class="error" title="“&amp;” did not start a character reference. (“&amp;” probably should have been escaped as “&amp;amp;”.)">&amp;</span>ta</span>p_s=75426-9cf8ad<span><span class="error" title="“&amp;” did not start a character reference. (“&amp;” probably should have been escaped as “&amp;amp;”.)">&amp;</span>t</span>m_source=recommended</a>"&gt;</span><span>Datacamp</span><span>&lt;/<span class="end-tag">a</span>&gt;</span><span> provides online interactive courses that combine interactive coding challenges with videos from top instructors in the field.
+<span id="line512"></span></span><span>&lt;/<span class="end-tag">p</span>&gt;</span><span></span><span>&lt;<span class="start-tag">p</span>&gt;</span><span>
+<span id="line513"></span>Datacamp has beginner to advanced Python training that programmers of all levels benefit from.
+<span id="line514"></span></span><span>&lt;/<span class="end-tag">p</span>&gt;</span><span>
+<span id="line515"></span></span><span>&lt;/<span class="end-tag">section</span>&gt;</span><span>
+<span id="line516"></span></span><span>&lt;<span class="start-tag">p</span>&gt;</span><span><span class="entity"><span>&amp;</span>nbsp;</span></span><span>&lt;/<span class="end-tag">p</span>&gt;</span><span>
+<span id="line517"></span></span><span>&lt;<span class="start-tag">div</span> <span class="attribute-name">align</span>="<a class="attribute-value">center</a>"&gt;</span><span>
+<span id="line518"></span></span><span class="comment">&lt;!-- code from sekindo - Python_video - Pythonforbeginners NVU --&gt;</span><span>
+<span id="line519"></span>
+<span id="line520"></span></span><span>&lt;<span class="start-tag">script</span> <span class="attribute-name">type</span>="<a class="attribute-value">text/javascript</a>" <span class="attribute-name">language</span>="<a class="attribute-value">javascript</a>" <span class="attribute-name">src</span>="<a class="attribute-value" href="view-source:https://live.sekindo.com/live/liveView.php?s=92123&amp;cbuster=[CACHE_BUSTER]&amp;pubUrl=[PAGE_URL_ENCODED]&amp;x=640&amp;y=436&amp;vp_content=plembed66ljrwnpuxgq&amp;vp_template=40">https://live.sekindo.com/live/liveView.php?s=92123<span><span class="error" title="“&amp;” did not start a character reference. (“&amp;” probably should have been escaped as “&amp;amp;”.)">&amp;</span>c</span>buster=[CACHE_BUSTER]<span><span class="error" title="“&amp;” did not start a character reference. (“&amp;” probably should have been escaped as “&amp;amp;”.)">&amp;</span>pu</span>bUrl=[PAGE_URL_ENCODED]<span><span class="error" title="“&amp;” did not start a character reference. (“&amp;” probably should have been escaped as “&amp;amp;”.)">&amp;</span>x</span>=640<span><span class="error" title="“&amp;” did not start a character reference. (“&amp;” probably should have been escaped as “&amp;amp;”.)">&amp;</span>y</span>=436<span><span class="error" title="“&amp;” did not start a character reference. (“&amp;” probably should have been escaped as “&amp;amp;”.)">&amp;</span>vp</span>_content=plembed66ljrwnpuxgq<span><span class="error" title="“&amp;” did not start a character reference. (“&amp;” probably should have been escaped as “&amp;amp;”.)">&amp;</span>vp</span>_template=40</a>"&gt;</span><span></span><span>&lt;/<span class="end-tag">script</span>&gt;</span><span>
+<span id="line521"></span>
+<span id="line522"></span></span><span class="comment">&lt;!-- code from sekindo --&gt;</span><span>
+<span id="line523"></span></span><span>&lt;/<span class="end-tag">div</span>&gt;</span><span>
+<span id="line524"></span>                </span><span>&lt;<span class="start-tag">div</span>&gt;</span><span>
+<span id="line525"></span>                    </span><span>&lt;<span class="start-tag">a</span> <span class="attribute-name">href</span>="<a class="attribute-value" href="view-source:https://twitter.com/share?url=https://www.pythonforbeginners.com/beautifulsoup/beautifulsoup-4-python">https://twitter.com/share?url=https://www.pythonforbeginners.com/beautifulsoup/beautifulsoup-4-python</a>" <span class="attribute-name">class</span>="<a class="attribute-value">twitter-share-button</a>" <span class="attribute-name">data-via</span>="<a class="attribute-value">pythonbeginners</a>" <span class="attribute-name">data-size</span>="<a class="attribute-value">large</a>"&gt;</span><span>Tweet</span><span>&lt;/<span class="end-tag">a</span>&gt;</span><span>
+<span id="line526"></span>                    </span><span>&lt;<span class="start-tag">div</span> <span class="attribute-name">class</span>="<a class="attribute-value">g-plusone</a>" <span class="attribute-name">data-href</span>="<a class="attribute-value">https://www.pythonforbeginners.com/beautifulsoup/beautifulsoup-4-python</a>" <span class="attribute-name">data-size</span>="<a class="attribute-value">standard</a>" <span class="attribute-name">data-annotation</span>="<a class="attribute-value">bubble</a>"&gt;</span><span></span><span>&lt;/<span class="end-tag">div</span>&gt;</span><span>
+<span id="line527"></span>                    </span><span>&lt;<span class="start-tag">div</span> <span class="attribute-name">class</span>="<a class="attribute-value">fb-like</a>" <span class="attribute-name">data-href</span>="<a class="attribute-value">https://www.pythonforbeginners.com/beautifulsoup/beautifulsoup-4-python</a>" <span class="attribute-name">data-layout</span>="<a class="attribute-value">button_count</a>" <span class="attribute-name">data-action</span>="<a class="attribute-value">like</a>" <span class="attribute-name">data-show-faces</span>="<a class="attribute-value">true</a>" <span class="attribute-name">data-share</span>="<a class="attribute-value">true</a>"&gt;</span><span></span><span>&lt;/<span class="end-tag">div</span>&gt;</span><span>
+<span id="line528"></span>                </span><span>&lt;/<span class="end-tag">div</span>&gt;</span><span></span><span>&lt;<span class="start-tag">br</span><span>/</span>&gt;</span><span></span><span>&lt;<span class="start-tag">br</span><span>/</span>&gt;</span><span>
+<span id="line529"></span>
+<span id="line530"></span>                Read more about:
+<span id="line531"></span>                </span><span>&lt;<span class="start-tag">ul</span> <span class="attribute-name">class</span>="<a class="attribute-value">nav nav-pills</a>"&gt;</span><span>
+<span id="line532"></span>                
+<span id="line533"></span>                </span><span>&lt;<span class="start-tag">li</span>&gt;</span><span></span><span>&lt;<span class="start-tag">a</span> <span class="attribute-name">href</span>="<a class="attribute-value" href="view-source:https://www.pythonforbeginners.com/beautifulsoup/">/beautifulsoup/</a>" <span class="attribute-name">title</span>="<a class="attribute-value">BeautifulSoup</a>"&gt;</span><span></span><span>&lt;<span class="start-tag">span</span> <span class="attribute-name">class</span>="<a class="attribute-value">glyphicon glyphicon-folder-open</a>"&gt;</span><span></span><span>&lt;/<span class="end-tag">span</span>&gt;</span><span><span class="entity"><span>&amp;</span>nbsp;</span><span class="entity"><span>&amp;</span>nbsp;</span>BeautifulSoup</span><span>&lt;/<span class="end-tag">a</span>&gt;</span><span></span><span>&lt;/<span class="end-tag">li</span>&gt;</span><span>
+<span id="line534"></span>                
+<span id="line535"></span>                </span><span>&lt;<span class="start-tag">li</span>&gt;</span><span></span><span>&lt;<span class="start-tag">a</span> <span class="attribute-name">href</span>="<a class="attribute-value" href="view-source:https://www.pythonforbeginners.com/python-on-the-web/">/python-on-the-web/</a>" <span class="attribute-name">title</span>="<a class="attribute-value">Web <span class="entity"><span>&amp;</span>amp;</span> Internet</a>"&gt;</span><span></span><span>&lt;<span class="start-tag">span</span> <span class="attribute-name">class</span>="<a class="attribute-value">glyphicon glyphicon-folder-open</a>"&gt;</span><span></span><span>&lt;/<span class="end-tag">span</span>&gt;</span><span><span class="entity"><span>&amp;</span>nbsp;</span><span class="entity"><span>&amp;</span>nbsp;</span>Web <span class="entity"><span>&amp;</span>amp;</span> Internet</span><span>&lt;/<span class="end-tag">a</span>&gt;</span><span></span><span>&lt;/<span class="end-tag">li</span>&gt;</span><span>
+<span id="line536"></span>                
+<span id="line537"></span>                </span><span>&lt;/<span class="end-tag">ul</span>&gt;</span><span>
+<span id="line538"></span>            </span><span>&lt;/<span class="end-tag">div</span>&gt;</span><span>
+<span id="line539"></span> </span><span class="comment">&lt;!--Carambola Script --&gt;</span><span> 
+<span id="line540"></span></span><span>&lt;<span class="start-tag">img</span> <span class="attribute-name">height</span>='<a class="attribute-value">0</a>' <span class="attribute-name">width</span>='<a class="attribute-value">0</a>' <span class="attribute-name">alt</span>='<a class="attribute-value"></a>' <span class="attribute-name">src</span>='<a class="attribute-value" href="view-source:https://pixel.watch/6ot8">//pixel.watch/6ot8</a>' <span>/</span>&gt;</span><span> 
+<span id="line541"></span></span><span>&lt;<span class="start-tag">script</span> <span class="attribute-name">data-cfasync</span>="<a class="attribute-value">false</a>" <span class="attribute-name">class</span>="<a class="attribute-value">carambola_InContent</a>" <span class="attribute-name">type</span>="<a class="attribute-value">text/javascript</a>" <span class="attribute-name">cbola_wid</span>="<a class="attribute-value">0</a>"&gt;</span><span>  
+<span id="line542"></span>(function (i,d,s,o,m,r,c,l,w,q,y,h,g) {  
+<span id="line543"></span>var e=d.getElementById(r);if(e===null){  
+<span id="line544"></span>var t = d.createElement(o); t.src = g; t.id = r; t.setAttribute(m, s);t.async = 1;var n=d.getElementsByTagName(o)[0];n.parentNode.insertBefore(t, n); 
+<span id="line545"></span>var dt=new Date().getTime();  
+<span id="line546"></span>try{i[l][w+y](h,i[l][q+y](h)+'&amp;'+dt);}catch(er){i[h]=dt;}  
+<span id="line547"></span>} else if(typeof i[c]!=='undefined'){i[c]++}  
+<span id="line548"></span>else{i[c]=1;}  
+<span id="line549"></span>})(window, document, 'InContent', 'script', 'mediaType', 'carambola_proxy','Cbola_IC','localStorage','set','get','Item','cbolaDt','//route.carambo.la/inimage/getlayer?pid=cdjm91&amp;did=112206&amp;wid=0')  
+<span id="line550"></span> </span><span>&lt;/<span class="end-tag">script</span>&gt;</span><span>
+<span id="line551"></span></span><span class="comment">&lt;!-- end Carambola Script --&gt;</span><span>
+<span id="line552"></span>
+<span id="line553"></span>            </span><span>&lt;<span class="start-tag">div</span> <span class="attribute-name">id</span>="<a class="attribute-value">disqus_thread</a>"&gt;</span><span>
+<span id="line554"></span>                </span><span>&lt;<span class="start-tag">div</span> <span class="attribute-name">id</span>="<a class="attribute-value">dsq-content</a>"&gt;</span><span>
+<span id="line555"></span>                    </span><span>&lt;<span class="start-tag">ul</span> <span class="attribute-name">class</span>="<a class="attribute-value">nav</a>" <span class="attribute-name">id</span>="<a class="attribute-value">dsq-comments</a>"&gt;</span><span>
+<span id="line556"></span>                                        
+<span id="line557"></span>                        </span><span>&lt;<span class="start-tag">li</span> <span class="attribute-name">class</span>="<a class="attribute-value">comment even thread-even depth-1</a>" <span class="attribute-name">id</span>="<a class="attribute-value">dsq-comment-1233072888</a>"&gt;</span><span>
+<span id="line558"></span>                            </span><span>&lt;<span class="start-tag">div</span> <span class="attribute-name">id</span>="<a class="attribute-value">dsq-comment-header-1233072888</a>" <span class="attribute-name">class</span>="<a class="attribute-value">dsq-comment-header</a>"&gt;</span><span>
+<span id="line559"></span>                                </span><span>&lt;<span class="start-tag">cite</span> <span class="attribute-name">id</span>="<a class="attribute-value">dsq-cite-1233072888</a>"&gt;</span><span>
+<span id="line560"></span>                                    </span><span>&lt;<span class="start-tag">strong</span>&gt;</span><span></span><span>&lt;<span class="start-tag">span</span> <span class="attribute-name">id</span>="<a class="attribute-value">dsq-author-user-1233072888</a>"&gt;</span><span>Madhusudan Dad</span><span>&lt;/<span class="end-tag">span</span>&gt;</span><span></span><span>&lt;/<span class="end-tag">strong</span>&gt;</span><span> 
+<span id="line561"></span>                                    </span><span>&lt;<span class="start-tag">span</span>&gt;</span><span>Feb. 6, 2014, 2:25 a.m.</span><span>&lt;/<span class="end-tag">span</span>&gt;</span><span>
+<span id="line562"></span>                                </span><span>&lt;/<span class="end-tag">cite</span>&gt;</span><span>
+<span id="line563"></span>                            </span><span>&lt;/<span class="end-tag">div</span>&gt;</span><span>
+<span id="line564"></span>                            </span><span>&lt;<span class="start-tag">div</span> <span class="attribute-name">id</span>="<a class="attribute-value">dsq-comment-body-1233072888</a>" <span class="attribute-name">class</span>="<a class="attribute-value">dsq-comment-body</a>"&gt;</span><span>
+<span id="line565"></span>                                </span><span>&lt;<span class="start-tag">div</span> <span class="attribute-name">id</span>="<a class="attribute-value">dsq-comment-message-1233072888</a>" <span class="attribute-name">class</span>="<a class="attribute-value">dsq-comment-message</a>"&gt;</span><span></span><span>&lt;<span class="start-tag">p</span>&gt;</span><span></span><span>&lt;<span class="start-tag">p</span>&gt;</span><span>How to give input to web through python using beautifulsoup?</span><span>&lt;/<span class="end-tag">p</span>&gt;</span><span></span><span class="error" title="No “p” element in scope but a “p” end tag seen.">&lt;/<span class="end-tag">p</span>&gt;</span><span>
+<span id="line566"></span>                                </span><span>&lt;/<span class="end-tag">div</span>&gt;</span><span>
+<span id="line567"></span>                            </span><span>&lt;/<span class="end-tag">div</span>&gt;</span><span>
+<span id="line568"></span>                        </span><span>&lt;/<span class="end-tag">li</span>&gt;</span><span>
+<span id="line569"></span>                    
+<span id="line570"></span>                    </span><span>&lt;/<span class="end-tag">ul</span>&gt;</span><span>
+<span id="line571"></span>                </span><span>&lt;/<span class="end-tag">div</span>&gt;</span><span>
+<span id="line572"></span>            </span><span>&lt;/<span class="end-tag">div</span>&gt;</span><span>
+<span id="line573"></span></span><span>&lt;<span class="start-tag">div</span> <span class="attribute-name">style</span>="<a class="attribute-value">font-size: small;</a>"&gt;</span><span></span><span>&lt;<span class="start-tag">i</span>&gt;</span><span>Disclosure of Material Connection: Some of the links in the post above are “affiliate links.” This means if you click on the link and purchase the item, I will receive an affiliate commission. Regardless, PythonForBeginners.com only recommend products or services that we try personally and believe will add value to our readers.</span><span>&lt;/<span class="end-tag">i</span>&gt;</span><span></span><span>&lt;/<span class="end-tag">div</span>&gt;</span><span>
+<span id="line574"></span>        </span><span>&lt;/<span class="end-tag">div</span>&gt;</span><span>
+<span id="line575"></span>        
+<span id="line576"></span>        </span><span>&lt;<span class="start-tag">div</span> <span class="attribute-name">class</span>="<a class="attribute-value">col-md-5 col-lg-4</a>"&gt;</span><span>
+<span id="line577"></span>    </span><span>&lt;<span class="start-tag">form</span> <span class="attribute-name">role</span>="<a class="attribute-value">form</a>" <span class="attribute-name">id</span>="<a class="attribute-value">search</a>" <span class="attribute-name">method</span>="<a class="attribute-value">get</a>" <span class="attribute-name">action</span>="<a class="attribute-value" href="view-source:https://www.pythonforbeginners.com/search/">/search/</a>"&gt;</span><span> 
+<span id="line578"></span>      </span><span>&lt;<span class="start-tag">div</span> <span class="attribute-name">class</span>="<a class="attribute-value">input-group</a>"&gt;</span><span>
+<span id="line579"></span>          </span><span>&lt;<span class="start-tag">input</span> <span class="attribute-name">type</span>="<a class="attribute-value">text</a>" <span class="attribute-name">placeholder</span>="<a class="attribute-value">Search</a>" <span class="attribute-name">id</span>="<a class="attribute-value">q</a>" <span class="attribute-name">name</span>="<a class="attribute-value">q</a>" <span class="attribute-name">class</span>="<a class="attribute-value">form-control</a>"&gt;</span><span>
+<span id="line580"></span>          </span><span>&lt;<span class="start-tag">span</span> <span class="attribute-name">class</span>="<a class="attribute-value">input-group-btn</a>"&gt;</span><span>
+<span id="line581"></span>            </span><span>&lt;<span class="start-tag">button</span> <span class="attribute-name">type</span>="<a class="attribute-value">submit</a>" <span class="attribute-name">class</span>="<a class="attribute-value">btn btn-default</a>"&gt;</span><span>SEARCH</span><span>&lt;/<span class="end-tag">button</span>&gt;</span><span>
+<span id="line582"></span>          </span><span>&lt;/<span class="end-tag">span</span>&gt;</span><span>               
+<span id="line583"></span>      </span><span>&lt;/<span class="end-tag">div</span>&gt;</span><span>
+<span id="line584"></span>    </span><span>&lt;/<span class="end-tag">form</span>&gt;</span><span>
+<span id="line585"></span>    </span><span>&lt;<span class="start-tag">aside</span>&gt;</span><span>
+<span id="line586"></span></span><span>&lt;<span class="start-tag">div</span> <span class="attribute-name">style</span>="<a class="attribute-value">padding: 8px 8px;</a>"&gt;</span><span></span><span>&lt;<span class="start-tag">div</span> <span class="attribute-name">id</span>="<a class="attribute-value">waldo-tag-1669</a>"&gt;</span><span></span><span>&lt;/<span class="end-tag">div</span>&gt;</span><span>
+<span id="line587"></span></span><span>&lt;/<span class="end-tag">div</span>&gt;</span><span>
+<span id="line588"></span>
+<span id="line589"></span>  
+<span id="line590"></span>        </span><span>&lt;<span class="start-tag">div</span> <span class="attribute-name">class</span>="<a class="attribute-value">categories</a>"&gt;</span><span>
+<span id="line591"></span>          </span><span>&lt;<span class="start-tag">h3</span>&gt;</span><span>Categories</span><span>&lt;/<span class="end-tag">h3</span>&gt;</span><span>
+<span id="line592"></span>          </span><span>&lt;<span class="start-tag">ul</span> <span class="attribute-name">class</span>="<a class="attribute-value">nav nav-pills nav-stacked</a>"&gt;</span><span>
+<span id="line593"></span>              </span><span>&lt;<span class="start-tag">li</span>&gt;</span><span></span><span>&lt;<span class="start-tag">a</span> <span class="attribute-name">href</span>="<a class="attribute-value" href="view-source:https://www.pythonforbeginners.com/basics/">/basics/</a>"&gt;</span><span>Basics</span><span>&lt;/<span class="end-tag">a</span>&gt;</span><span></span><span>&lt;/<span class="end-tag">li</span>&gt;</span><span>
+<span id="line594"></span>              </span><span>&lt;<span class="start-tag">li</span>&gt;</span><span></span><span>&lt;<span class="start-tag">a</span> <span class="attribute-name">href</span>="<a class="attribute-value" href="view-source:https://www.pythonforbeginners.com/cheatsheet/">/cheatsheet/</a>"&gt;</span><span>Cheatsheet</span><span>&lt;/<span class="end-tag">a</span>&gt;</span><span></span><span>&lt;/<span class="end-tag">li</span>&gt;</span><span>
+<span id="line595"></span>              </span><span>&lt;<span class="start-tag">li</span>&gt;</span><span></span><span>&lt;<span class="start-tag">a</span> <span class="attribute-name">href</span>="<a class="attribute-value" href="view-source:https://www.pythonforbeginners.com/code-snippets-source-code/">/code-snippets-source-code/</a>"&gt;</span><span>Code snippets</span><span>&lt;/<span class="end-tag">a</span>&gt;</span><span></span><span>&lt;/<span class="end-tag">li</span>&gt;</span><span>
+<span id="line596"></span>              </span><span>&lt;<span class="start-tag">li</span>&gt;</span><span></span><span>&lt;<span class="start-tag">a</span> <span class="attribute-name">href</span>="<a class="attribute-value" href="view-source:https://www.pythonforbeginners.com/development/">/development/</a>"&gt;</span><span>Development</span><span>&lt;/<span class="end-tag">a</span>&gt;</span><span></span><span>&lt;/<span class="end-tag">li</span>&gt;</span><span>
+<span id="line597"></span>              </span><span>&lt;<span class="start-tag">li</span>&gt;</span><span></span><span>&lt;<span class="start-tag">a</span> <span class="attribute-name">href</span>="<a class="attribute-value" href="view-source:https://www.pythonforbeginners.com/dictionary/">/dictionary/</a>"&gt;</span><span>Dictionary</span><span>&lt;/<span class="end-tag">a</span>&gt;</span><span></span><span>&lt;/<span class="end-tag">li</span>&gt;</span><span>
+<span id="line598"></span>              </span><span>&lt;<span class="start-tag">li</span>&gt;</span><span></span><span>&lt;<span class="start-tag">a</span> <span class="attribute-name">href</span>="<a class="attribute-value" href="view-source:https://www.pythonforbeginners.com/error-handling/">/error-handling/</a>"&gt;</span><span>Error Handling</span><span>&lt;/<span class="end-tag">a</span>&gt;</span><span></span><span>&lt;/<span class="end-tag">li</span>&gt;</span><span>
+<span id="line599"></span>              </span><span>&lt;<span class="start-tag">li</span>&gt;</span><span></span><span>&lt;<span class="start-tag">a</span> <span class="attribute-name">href</span>="<a class="attribute-value" href="view-source:https://www.pythonforbeginners.com/lists/">/lists/</a>"&gt;</span><span>Lists</span><span>&lt;/<span class="end-tag">a</span>&gt;</span><span></span><span>&lt;/<span class="end-tag">li</span>&gt;</span><span>
+<span id="line600"></span>              </span><span>&lt;<span class="start-tag">li</span>&gt;</span><span></span><span>&lt;<span class="start-tag">a</span> <span class="attribute-name">href</span>="<a class="attribute-value" href="view-source:https://www.pythonforbeginners.com/loops/">/loops/</a>"&gt;</span><span>Loops</span><span>&lt;/<span class="end-tag">a</span>&gt;</span><span></span><span>&lt;/<span class="end-tag">li</span>&gt;</span><span>
+<span id="line601"></span>              </span><span>&lt;<span class="start-tag">li</span>&gt;</span><span></span><span>&lt;<span class="start-tag">a</span> <span class="attribute-name">href</span>="<a class="attribute-value" href="view-source:https://www.pythonforbeginners.com/modules-in-python/">/modules-in-python/</a>"&gt;</span><span>Modules</span><span>&lt;/<span class="end-tag">a</span>&gt;</span><span></span><span>&lt;/<span class="end-tag">li</span>&gt;</span><span>
+<span id="line602"></span>              </span><span>&lt;<span class="start-tag">li</span>&gt;</span><span></span><span>&lt;<span class="start-tag">a</span> <span class="attribute-name">href</span>="<a class="attribute-value" href="view-source:https://www.pythonforbeginners.com/python-strings/">/python-strings/</a>"&gt;</span><span>Strings</span><span>&lt;/<span class="end-tag">a</span>&gt;</span><span></span><span>&lt;/<span class="end-tag">li</span>&gt;</span><span>
+<span id="line603"></span>              </span><span>&lt;<span class="start-tag">li</span>&gt;</span><span></span><span>&lt;<span class="start-tag">a</span> <span class="attribute-name">href</span>="<a class="attribute-value" href="view-source:https://www.pythonforbeginners.com/systems-programming/">/systems-programming/</a>"&gt;</span><span>System <span class="entity"><span>&amp;</span>amp;</span> OS</span><span>&lt;/<span class="end-tag">a</span>&gt;</span><span></span><span>&lt;/<span class="end-tag">li</span>&gt;</span><span>
+<span id="line604"></span>              </span><span>&lt;<span class="start-tag">li</span>&gt;</span><span></span><span>&lt;<span class="start-tag">a</span> <span class="attribute-name">href</span>="<a class="attribute-value" href="view-source:https://www.pythonforbeginners.com/python-on-the-web/">/python-on-the-web/</a>"&gt;</span><span>Web <span class="entity"><span>&amp;</span>amp;</span> Internet</span><span>&lt;/<span class="end-tag">a</span>&gt;</span><span></span><span>&lt;/<span class="end-tag">li</span>&gt;</span><span>
+<span id="line605"></span>          </span><span>&lt;/<span class="end-tag">ul</span>&gt;</span><span>
+<span id="line606"></span>        </span><span>&lt;/<span class="end-tag">div</span>&gt;</span><span>
+<span id="line607"></span></span><span>&lt;<span class="start-tag">div</span> <span class="attribute-name">style</span>="<a class="attribute-value">padding: 15px 0px 15px 0px;</a>"&gt;</span><span></span><span>&lt;<span class="start-tag">div</span> <span class="attribute-name">id</span>="<a class="attribute-value">waldo-tag-1673</a>"&gt;</span><span></span><span>&lt;/<span class="end-tag">div</span>&gt;</span><span></span><span>&lt;/<span class="end-tag">div</span>&gt;</span><span>
+<span id="line608"></span>
+<span id="line609"></span>      </span><span>&lt;<span class="start-tag">div</span> <span class="attribute-name">class</span>="<a class="attribute-value">textwidget</a>"&gt;</span><span></span><span>&lt;<span class="start-tag">a</span> <span class="attribute-name">class</span>="<a class="attribute-value">twitter-timeline</a>"
+<span id="line610"></span>  <span class="attribute-name">href</span>="<a class="attribute-value" href="view-source:https://twitter.com/pythonbeginners">https://twitter.com/pythonbeginners</a>" <span class="attribute-name">data-tweet-limit</span>="<a class="attribute-value">3</a>"&gt;</span><span>
+<span id="line611"></span>Latest Tweets by @pythonbeginners
+<span id="line612"></span></span><span>&lt;/<span class="end-tag">a</span>&gt;</span><span></span><span>&lt;/<span class="end-tag">div</span>&gt;</span><span>
+<span id="line613"></span></span><span class="comment">&lt;!-- sovrn 300x250 --&gt;</span><span>
+<span id="line614"></span></span><span>&lt;<span class="start-tag">div</span> <span class="attribute-name">style</span>="<a class="attribute-value">padding: 15px 0px 15px 0px;</a>"&gt;</span><span></span><span>&lt;/<span class="end-tag">div</span>&gt;</span><span>
+<span id="line615"></span>    </span><span>&lt;/<span class="end-tag">aside</span>&gt;</span><span>
+<span id="line616"></span></span><span>&lt;/<span class="end-tag">div</span>&gt;</span><span>
+<span id="line617"></span>    </span><span>&lt;/<span class="end-tag">div</span>&gt;</span><span> 
+<span id="line618"></span>
+<span id="line619"></span>
+<span id="line620"></span>            </span><span>&lt;<span class="start-tag">div</span> <span class="attribute-name">class</span>="<a class="attribute-value">push</a>"&gt;</span><span></span><span>&lt;/<span class="end-tag">div</span>&gt;</span><span>
+<span id="line621"></span>        </span><span class="error" title="Stray end tag “div”.">&lt;/<span class="end-tag">div</span>&gt;</span><span>
+<span id="line622"></span>       
+<span id="line623"></span>
+<span id="line624"></span>
+<span id="line625"></span></span><span>&lt;<span class="start-tag">div</span> <span class="attribute-name">class</span>="<a class="attribute-value">container container-footer</a>"&gt;</span><span>
+<span id="line626"></span>    </span><span>&lt;<span class="start-tag">div</span> <span class="attribute-name">id</span>="<a class="attribute-value">footer</a>"&gt;</span><span>
+<span id="line627"></span>          <span class="entity"><span>&amp;</span>copy;</span> </span><span>&lt;<span class="start-tag">a</span> <span class="attribute-name">href</span>="<a class="attribute-value" href="view-source:https://www.pythonforbeginners.com/">https://www.pythonforbeginners.com</a>"&gt;</span><span>Python For Beginners</span><span>&lt;/<span class="end-tag">a</span>&gt;</span><span> 2012-2017  |  </span><span>&lt;<span class="start-tag">a</span> <span class="attribute-name">href</span>="<a class="attribute-value" href="view-source:https://www.pythonforbeginners.com/privacy-policy/">/privacy-policy/</a>"&gt;</span><span>Privacy Policy</span><span>&lt;/<span class="end-tag">a</span>&gt;</span><span> | </span><span>&lt;<span class="start-tag">a</span> <span class="attribute-name">href</span>="<a class="attribute-value" href="view-source:https://www.pythonforbeginners.com/write/">/write/</a>"&gt;</span><span>Write For Us</span><span>&lt;/<span class="end-tag">a</span>&gt;</span><span> | </span><span>&lt;<span class="start-tag">a</span> <span class="attribute-name">href</span>="<a class="attribute-value" href="view-source:https://www.pythonforbeginners.com/contact-us/">/contact-us/</a>"&gt;</span><span>Contact Us</span><span>&lt;/<span class="end-tag">a</span>&gt;</span><span>
+<span id="line628"></span></span><span class="comment">&lt;!-- Piwik --&gt;</span><span>
+<span id="line629"></span></span><span>&lt;<span class="start-tag">script</span> <span class="attribute-name">type</span>="<a class="attribute-value">text/javascript</a>"&gt;</span><span>
+<span id="line630"></span>  var _paq = _paq || [];
+<span id="line631"></span>  // tracker methods like "setCustomDimension" should be called before "trackPageView"
+<span id="line632"></span>  _paq.push(['trackPageView']);
+<span id="line633"></span>  _paq.push(['enableLinkTracking']);
+<span id="line634"></span>  (function() {
+<span id="line635"></span>    var u="//c9msvr1.com/pa/";
+<span id="line636"></span>    _paq.push(['setTrackerUrl', u+'piwik.php']);
+<span id="line637"></span>    _paq.push(['setSiteId', '12']);
+<span id="line638"></span>    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+<span id="line639"></span>    g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'piwik.js'; s.parentNode.insertBefore(g,s);
+<span id="line640"></span>  })();
+<span id="line641"></span></span><span>&lt;/<span class="end-tag">script</span>&gt;</span><span>
+<span id="line642"></span></span><span class="comment">&lt;!-- End Piwik Code --&gt;</span><span>   
+<span id="line643"></span></span><span>&lt;/<span class="end-tag">div</span>&gt;</span><span>
+<span id="line644"></span></span><span>&lt;/<span class="end-tag">div</span>&gt;</span><span>
+<span id="line645"></span>        </span><span>&lt;<span class="start-tag">script</span> <span class="attribute-name">src</span>="<a class="attribute-value" href="view-source:https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js">//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js</a>"&gt;</span><span></span><span>&lt;/<span class="end-tag">script</span>&gt;</span><span>
+<span id="line646"></span>        </span><span>&lt;<span class="start-tag">script</span> <span class="attribute-name">src</span>="<a class="attribute-value" href="view-source:https://netdna.bootstrapcdn.com/bootstrap/3.0.3/js/bootstrap.min.js">//netdna.bootstrapcdn.com/bootstrap/3.0.3/js/bootstrap.min.js</a>"&gt;</span><span></span><span>&lt;/<span class="end-tag">script</span>&gt;</span><span>
+<span id="line647"></span>
+<span id="line648"></span>        </span><span>&lt;<span class="start-tag">script</span>&gt;</span><span>(function(d, s, id) {
+<span id="line649"></span>          var js, fjs = d.getElementsByTagName(s)[0];
+<span id="line650"></span>          if (d.getElementById(id)) return;
+<span id="line651"></span>          js = d.createElement(s); js.id = id;
+<span id="line652"></span>          js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&amp;appId=1474940332733250";
+<span id="line653"></span>          fjs.parentNode.insertBefore(js, fjs);
+<span id="line654"></span>        }(document, 'script', 'facebook-jssdk'));</span><span>&lt;/<span class="end-tag">script</span>&gt;</span><span>
+<span id="line655"></span>        
+<span id="line656"></span></span><span>&lt;<span class="start-tag">script</span> <span class="attribute-name">type</span>="<a class="attribute-value">text/javascript</a>"&gt;</span><span>
+<span id="line657"></span>/* </span><span>&lt;!</span><span>[CDATA[ */
+<span id="line658"></span>    var disqus_url = 'https://www.pythonforbeginners.com/beautifulsoup/beautifulsoup-4-python';
+<span id="line659"></span>    // var disqus_identifier = '4072 https://www.pythonforbeginners.com/?p=4072';
+<span id="line660"></span>    var disqus_container_id = 'disqus_thread';
+<span id="line661"></span>    var disqus_domain = 'disqus.com';
+<span id="line662"></span>    var disqus_shortname = 'pythonbeginners';
+<span id="line663"></span>    var disqus_title = "Beautiful Soup 4 Python";
+<span id="line664"></span>        var disqus_config = function () {
+<span id="line665"></span>        var config = this; // Access to the config object
+<span id="line666"></span>        config.language = '';
+<span id="line667"></span>
+<span id="line668"></span>        /*
+<span id="line669"></span>           All currently supported events:
+<span id="line670"></span>            * preData — fires just before we request for initial data
+<span id="line671"></span>            * preInit - fires after we get initial data but before we load any dependencies
+<span id="line672"></span>            * onInit  - fires when all dependencies are resolved but before dtpl template is rendered
+<span id="line673"></span>            * afterRender - fires when template is rendered but before we show it
+<span id="line674"></span>            * onReady - everything is done
+<span id="line675"></span>         */
+<span id="line676"></span>
+<span id="line677"></span>        config.callbacks.preData.push(function() {
+<span id="line678"></span>            // clear out the container (its filled for SEO/legacy purposes)
+<span id="line679"></span>            document.getElementById(disqus_container_id).innerHTML = '';
+<span id="line680"></span>        });
+<span id="line681"></span>                config.callbacks.onReady.push(function() {
+<span id="line682"></span>            // sync comments in the background so we don't block the page
+<span id="line683"></span>            var script = document.createElement('script');
+<span id="line684"></span>            script.async = true;
+<span id="line685"></span>            script.src = '?cf_action=sync_comments&amp;post_id=4072';
+<span id="line686"></span>
+<span id="line687"></span>            var firstScript = document.getElementsByTagName( "script" )[0];
+<span id="line688"></span>            firstScript.parentNode.insertBefore(script, firstScript);
+<span id="line689"></span>        });
+<span id="line690"></span>                    };
+<span id="line691"></span>/* ]]&gt; */
+<span id="line692"></span></span><span>&lt;/<span class="end-tag">script</span>&gt;</span><span>
+<span id="line693"></span>
+<span id="line694"></span></span><span>&lt;<span class="start-tag">script</span> <span class="attribute-name">type</span>="<a class="attribute-value">text/javascript</a>"&gt;</span><span>
+<span id="line695"></span>/* </span><span>&lt;!</span><span>[CDATA[ */
+<span id="line696"></span>(function() {
+<span id="line697"></span>    var dsq = document.createElement('script'); dsq.type = 'text/javascript';
+<span id="line698"></span>    dsq.async = true;
+<span id="line699"></span>    dsq.src = '//' + disqus_shortname + '.' + 'disqus.com' + '/embed.js?pname=wordpress&amp;pver=2.74';
+<span id="line700"></span>    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+<span id="line701"></span>})();
+<span id="line702"></span>/* ]]&gt; */
+<span id="line703"></span></span><span>&lt;/<span class="end-tag">script</span>&gt;</span><span>
+<span id="line704"></span>
+<span id="line705"></span></span><span>&lt;<span class="start-tag">script</span>&gt;</span><span>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</span><span>&lt;/<span class="end-tag">script</span>&gt;</span><span>
+<span id="line706"></span>
+<span id="line707"></span>        </span><span class="comment">&lt;!-- GetSiteControl --&gt;</span><span>
+<span id="line708"></span>        </span><span>&lt;<span class="start-tag">script</span>&gt;</span><span>
+<span id="line709"></span>  (function (w,i,d,g,e,t,s) {w[d] = w[d]||[];t= i.createElement(g);
+<span id="line710"></span>    t.async=1;t.src=e;s=i.getElementsByTagName(g)[0];s.parentNode.insertBefore(t, s);
+<span id="line711"></span>  })(window, document, '_gscq','script','//widgets.getsitecontrol.com/56830/script.js');
+<span id="line712"></span></span><span>&lt;/<span class="end-tag">script</span>&gt;</span><span>
+<span id="line713"></span>    </span><span>&lt;/<span class="end-tag">body</span>&gt;</span><span>
+<span id="line714"></span></span><span>&lt;/<span class="end-tag">html</span>&gt;</span><span>
+<span id="line715"></span></span></pre><menu type="context" id="actions"><menuitem id="goToLine" label="Go to Line…" accesskey="L"></menuitem><menuitem id="wrapLongLines" label="Wrap Long Lines" type="checkbox"></menuitem><menuitem id="highlightSyntax" label="Syntax Highlighting" type="checkbox" checked="true"></menuitem></menu></body></html>

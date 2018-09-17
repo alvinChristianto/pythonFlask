@@ -1,0 +1,94 @@
+2018-08-19 19:00:44,656 : INFO >> logging on INFO!
+2018-08-19 19:00:44,656 : DEBUG >> logging on DEBUG!
+2018-08-19 19:00:44,656 : WARNING >> logging on WARNING!
+2018-08-19 19:00:44,656 : WARNING >> WARNING, carefull to test your program!
+2018-08-19 19:00:44,657 : ERROR >> logging on error!
+2018-08-19 19:00:44,657 : CRITICAL >> logging on critical!
+2018-08-27 20:05:52,946 : INFO >> value is 9
+2018-08-27 20:05:52,971 : INFO >> logging 2
+2018-08-27 20:06:08,914 : INFO >> value is 9
+2018-08-27 20:06:08,915 : INFO >> logging 2
+2018-08-27 20:08:47,458 -  runlog_MAIN : INFO >> value is 9
+2018-08-27 20:08:47,460 -  runlog_MAIN : INFO >> logging 2
+2018-08-27 20:09:02,430 -  MAIN : INFO >> value is 9
+2018-08-27 20:09:02,430 -  MAIN : INFO >> logging 2
+2018-08-27 20:09:12,949 -  MAIN : INFO >> value is 9
+2018-08-27 20:09:12,950 -  MAIN : INFO >> logging 2
+2018-08-27 20:42:06,029 -  MAIN : INFO >> value is 9
+2018-08-27 20:42:06,030 -  MAIN : INFO >> logging 2
+2018-08-27 20:55:12,233 -  MAIN : INFO >> app started!
+2018-08-27 20:55:12,233 -  MAIN : INFO >> finish app!
+2018-08-27 20:55:17,335 -  MAIN : INFO >> app started!
+2018-08-27 20:55:17,337 -  MAIN : INFO >> finish app!
+2018-08-27 20:57:19,789 -  MAIN : INFO >> app started!
+2018-08-27 20:57:19,789 -  MAIN : INFO >> finish app!
+2018-08-27 21:00:11,286 -  MAIN : INFO >> app started!
+2018-08-27 21:00:11,286 -  MAIN : INFO >> finish app!
+2018-08-28 21:24:00,781 -  MAIN : INFO >> app started!
+2018-08-28 21:24:00,796 -  MAIN : INFO >> finish app!
+2018-08-28 21:24:04,411 -  MAIN : INFO >> app started!
+2018-08-28 21:24:04,415 -  MAIN : INFO >> finish app!
+2018-08-28 21:29:23,800 -  MAIN : INFO >> app started!
+2018-08-28 21:29:23,801 -  MAIN : INFO >> create instance to app_1 getTime
+2018-08-28 21:29:23,801 -  MAIN : INFO >> calling app.gettimeThing
+2018-08-28 21:29:23,801 -  MAIN : INFO >> finish app!
+2018-08-28 21:33:25,922 -  MAIN : INFO >> app started!
+2018-08-28 21:33:25,923 -  MAIN : INFO >> create instance to app_1 getTime
+2018-08-28 21:33:25,923 -  MAIN : INFO >> calling app.gettimeThing
+2018-08-28 21:33:25,923 -  MAIN : INFO >> finish app!
+2018-09-01 20:09:17,088 -  MAIN : INFO >> app started!
+2018-09-01 20:09:17,091 -  MAIN : INFO >> create instance to app_1 getTime
+2018-09-01 20:09:17,091 -  MAIN : INFO >> calling app.gettimeThing
+2018-09-01 20:09:17,092 -  MAIN : INFO >> finish app!
+2018-09-01 20:09:22,871 -  MAIN : INFO >> app started!
+2018-09-01 20:09:22,871 -  MAIN : INFO >> create instance to app_1 getTime
+2018-09-01 20:09:22,871 -  MAIN : INFO >> calling app.gettimeThing
+2018-09-01 20:09:22,871 -  MAIN : INFO >> finish app!
+2018-09-01 20:09:42,706 -  MAIN : INFO >> app started!
+2018-09-01 20:09:42,706 -  MAIN : INFO >> create instance to app_1 getTime
+2018-09-01 20:09:42,706 -  MAIN : INFO >> calling app.gettimeThing
+2018-09-01 20:09:42,706 -  MAIN : INFO >> finish app!
+2018-09-01 20:48:23,891 -  MAIN : INFO >> app started!
+2018-09-01 20:48:23,891 -  MAIN : INFO >> create instance to app_1 getTime
+2018-09-01 20:48:23,891 -  MAIN : INFO >> calling app.gettimeThing
+2018-09-01 20:48:23,891 -  MAIN : INFO >> finish app!
+2018-09-01 20:48:47,391 -  MAIN : INFO >> app started!
+2018-09-01 20:48:47,392 -  MAIN : INFO >> create instance to app_1 getTime
+2018-09-01 20:48:47,392 -  MAIN : INFO >> calling app.gettimeThing
+2018-09-01 20:48:47,392 -  MAIN : INFO >> finish app!
+2018-09-01 20:50:05,497 -  MAIN : INFO >> app started!
+2018-09-01 20:50:05,497 -  MAIN : INFO >> create instance to app_1 getTime
+2018-09-01 20:50:05,497 -  MAIN : INFO >> calling app.gettimeThing
+2018-09-01 20:50:05,497 -  MAIN : INFO >> finish app!
+2018-09-01 20:50:30,702 -  MAIN : INFO >> app started!
+2018-09-01 20:50:30,702 -  MAIN : INFO >> create instance to app_1 getTime
+2018-09-01 20:50:30,702 -  MAIN : INFO >> calling app.gettimeThing
+2018-09-01 20:50:30,703 -  MAIN : INFO >> finish app!
+2018-09-01 20:51:40,428 -  MAIN : INFO >> app started!
+2018-09-01 20:51:40,429 -  MAIN : INFO >> create instance to app_1 getTime
+2018-09-01 20:51:40,429 -  MAIN : INFO >> calling app.gettimeThing
+2018-09-01 20:51:40,429 -  MAIN : INFO >> finish app!
+2018-09-01 20:51:56,050 -  MAIN : INFO >> app started!
+2018-09-01 20:51:56,050 -  MAIN : INFO >> create instance to app_1 getTime
+2018-09-01 20:51:56,050 -  MAIN : INFO >> calling app.gettimeThing
+2018-09-01 20:51:56,050 -  MAIN : INFO >> finish app!
+2018-09-04 19:30:43,001 -  MAIN : INFO >> app started!
+2018-09-04 19:30:43,610 -  MAIN : INFO >> create instance to app_1 getTime
+2018-09-04 19:30:43,610 -  MAIN : INFO >> calling app.gettimeThing
+2018-09-04 19:30:43,612 -  MAIN : INFO >> finish app!
+2018-09-04 19:38:32,298 -  MAIN : INFO >> app started!
+2018-09-04 19:38:32,299 -  MAIN : INFO >> create instance to app_1 getTime
+2018-09-04 19:38:32,299 -  MAIN : INFO >> calling app.gettimeThing
+2018-09-04 19:38:32,299 -  MAIN : INFO >> finish app!
+2018-09-04 19:38:47,024 -  MAIN : INFO >> app started!
+2018-09-04 19:38:47,024 -  MAIN : INFO >> create instance to app_1 getTime
+2018-09-04 19:38:47,025 -  MAIN : INFO >> calling app.gettimeThing
+2018-09-04 19:38:47,025 -  MAIN : INFO >> finish app!
+2018-09-04 19:39:09,694 -  MAIN : INFO >> app started!
+2018-09-04 19:39:09,694 -  MAIN : INFO >> create instance to app_1 getTime
+2018-09-04 19:39:09,695 -  MAIN : INFO >> calling app.gettimeThing
+2018-09-04 19:39:09,695 -  MAIN : INFO >> finish app!
+2018-09-04 19:42:40,386 -  MAIN : INFO >> app started!
+2018-09-04 19:42:40,386 -  MAIN : INFO >> create instance to app_1 getTime
+2018-09-04 19:42:40,387 -  MAIN : INFO >> calling app.gettimeThing
+2018-09-04 19:42:40,387 -  MAIN : INFO >> finish app!
